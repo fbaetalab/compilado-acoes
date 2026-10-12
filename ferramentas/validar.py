@@ -23,11 +23,6 @@ MAX_LINHAS = 2000
 FIM_CAMPANHA = dt.date(2026, 10, 25)
 NOME_ARQUIVO = re.compile(r"^[a-z0-9][a-z0-9-]*\.(csv|json)$")
 FORMATOS = (".csv", ".json")
-URL = re.compile(r"https?://\S+")
-EMAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+")
-# Celular ou fixo com DDD: (11) 91234-5678, 11 91234 5678, +55 11 912345678, 1132345678
-TELEFONE = re.compile(r"(?<![\d/])(?:\+?55[\s.-]?)?\(?\d{2}\)?[\s.-]?9?\d{4}[\s.-]?\d{4}(?![\d/])")
-SEM_DADO_PESSOAL = ["titulo", "organizacao", "bairro", "local", "endereco", "descricao"]
 
 
 class Relatorio:
@@ -174,11 +169,6 @@ def validar_linha(a: dict, onde: str, uf_pasta: str | None, municipios: dict, di
     if a["fonte_url"]:
         if not re.fullmatch(r"https?://[^\s/]+\.[^\s/]+\S*", a["fonte_url"]):
             r.erro(onde, "fonte_url precisa ser um link completo, começando com https://")
-
-    for col in SEM_DADO_PESSOAL:
-        texto = URL.sub(" ", a[col])
-        if EMAIL.search(texto) or TELEFONE.search(texto):
-            r.erro(onde, f"o campo {col} tem e-mail ou telefone; tire os dados pessoais")
 
 
 def ler_csv(texto: str, nome: str, r: Relatorio) -> list[tuple[str, dict]] | None:

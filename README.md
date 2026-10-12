@@ -85,12 +85,10 @@ entre aspas, menos `online` (`true` ou `false`).
 ## Regras
 
 - **Toda ação precisa de uma fonte pública.** É o que permite conferir que ela existe. Sem `fonte_url`, não entra.
-- **Sem dados de contato.** Nada de telefone ou e-mail em nenhum campo. Opinião política é dado sensível (LGPD), e
-  quem organiza e quem vai a uma ação precisam estar protegidos.
 - **Sem repetição.** Se a ação já está em `ja-mapeadas/` ou em outro arquivo de `acoes/`, não mande de novo.
 - **Ações a partir de hoje.** As que já passaram são ignoradas.
-- **Cada envio tem responsável.** Os primeiros envios de cada pessoa são revisados pela equipe. Envio falso ou com
-  dados pessoais é removido, e a conta é bloqueada.
+- **Cada envio tem responsável.** Os primeiros envios de cada pessoa são revisados pela equipe. Envio falso é
+  removido, e a conta é bloqueada.
 
 ## O validador
 
@@ -111,7 +109,7 @@ ERRO   acoes/SP/meu-arquivo.csv, linha 7: município "Sao Paolo" não existe em 
 AVISO  acoes/SP/meu-arquivo.csv, linha 9: pode ser a mesma ação que já está no mapa: "Caminhada da Virada" (…)
 ```
 
-- **Erro** impede o pull request de entrar: formato, tipo, município, link, dado pessoal ou ação que já está no mapa.
+- **Erro** impede o pull request de entrar: formato, tipo, município, link ou ação que já está no mapa.
 - **Aviso** só pede atenção: ação parecida no mesmo dia e cidade, data que já passou.
 
 **Rodar é opcional, mas poupa tempo.** O mesmo validador roda sozinho no GitHub em cada pull request e marca o envio

@@ -69,12 +69,10 @@ class Validar(unittest.TestCase):
         _, r = self.conferir(linha(local=""))
         self.assertIn("local", r.erros[0])
 
-    def test_dado_pessoal(self):
-        for texto in ("Fale com a Ana (11) 91234-5678", "contato: ana@exemplo.org", "zap 11912345678"):
+    def test_contato_na_descricao_passa(self):
+        for texto in ("Fale com a Ana (11) 91234-5678", "contato: ana@exemplo.org"):
             _, r = self.conferir(linha(descricao=texto))
-            self.assertEqual(len(r.erros), 1, texto)
-        _, r = self.conferir(linha(descricao="Na rua 25 de Março, 1000, às 10h. https://instagram.com/p/12345678901/"))
-        self.assertEqual(r.erros, [])
+            self.assertEqual(r.erros, [], texto)
 
     def test_data_passada_so_avisa(self):
         _, r = self.conferir(linha(data="2026-10-01"))
