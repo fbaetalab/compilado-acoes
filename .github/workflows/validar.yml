@@ -1,0 +1,45 @@
+# Confere os CSVs de cada pull request. O validador que roda é o da main (base), nunca o do pull request:
+# quem envia não consegue mudar a regra que confere o próprio envio.
+name: Conferir ações
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  conferir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validador da main
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: base
+
+      - name: Arquivos do pull request
+        uses: actions/checkout@v4
+        with:
+          path: pr
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Conferir os CSVs
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          QUEM: ${{ github.event.pull_request.author_association }}
+        run: |
+          git -C pr diff --name-status "$BASE" HEAD > alteracoes.txt
+          cat alteracoes.txt
+          EQUIPE=""
+          case "$QUEM" in OWNER|MEMBER|COLLABORATOR) EQUIPE="--equipe" ;; esac
+          python base/ferramentas/validar.py --raiz pr --alteracoes alteracoes.txt $EQUIPE
+
+      - name: Testes (pull request da equipe)
+        if: contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.pull_request.author_association)
+        run: python -m unittest discover pr/testes

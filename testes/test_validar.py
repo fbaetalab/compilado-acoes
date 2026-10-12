@@ -1,0 +1,144 @@
+"""Testes do validador: python -m unittest discover testes"""
+import datetime as dt
+import pathlib
+import sys
+import tempfile
+import unittest
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "ferramentas"))
+
+import validar  # noqa: E402
+from comum import COLUNAS, carregar_municipios, link_normalizado, tipo_canonico  # noqa: E402
+
+HOJE = dt.date(2026, 10, 12)
+CABECALHO = ",".join(COLUNAS)
+MUNICIPIOS = carregar_municipios()
+MAPEADA = {"data": "2026-10-18", "hora_inicio": "10:00", "hora_fim": "", "tipo": "ato",
+           "titulo": "Caminhada da Virada", "uf": "SP", "municipio": "São Paulo", "bairro": "", "local": "Praça da Sé",
+           "online": "", "fonte_url": "https://www.instagram.com/p/ABC123/",
+           "link_boralula": "https://boralula.org/agenda/#/acao/1"}
+
+
+def linha(**campos) -> str:
+    base = {"titulo": "Panfletaço na feira", "data": "2026-10-18", "hora_inicio": "09:00", "tipo": "panfletagem",
+            "uf": "SP", "municipio": "São Paulo", "local": "Feira da Rua X", "fonte_url": "https://exemplo.org/a/1"}
+    base.update(campos)
+    return ",".join(f'"{base.get(c, "")}"' for c in COLUNAS)
+
+
+class Validar(unittest.TestCase):
+    def conferir(self, *linhas, nome="acoes/SP/teste.csv", texto=None, mapeadas=(), vistas=None):
+        with tempfile.TemporaryDirectory() as pasta:
+            raiz = pathlib.Path(pasta)
+            arq = raiz / nome
+            arq.parent.mkdir(parents=True)
+            arq.write_text(texto if texto is not None else "\n".join([CABECALHO, *linhas]) + "\n", encoding="utf-8")
+            r = validar.Relatorio()
+            total = validar.validar_arquivo(arq, raiz, MUNICIPIOS, list(mapeadas), vistas or {}, HOJE, r)
+            return total, r
+
+    def test_arquivo_certo_passa(self):
+        total, r = self.conferir(linha(), linha(titulo="Ato online", uf="", municipio="", local="", online="sim",
+                                                fonte_url="https://exemplo.org/sala/2"))
+        self.assertEqual((total, r.erros, r.avisos), (2, [], []))
+
+    def test_formatos_errados(self):
+        _, r = self.conferir(linha(data="18/10/2026", hora_inicio="9h", tipo="passeata", fonte_url="exemplo.org"))
+        texto = "\n".join(r.erros)
+        for trecho in ("AAAA-MM-DD", "HH:MM", "passeata", "https://"):
+            self.assertIn(trecho, texto)
+
+    def test_municipio_com_sugestao(self):
+        _, r = self.conferir(linha(municipio="Sao Paolo"))
+        self.assertIn('Você quis dizer "São Paulo"', r.erros[0])
+
+    def test_municipio_sem_acento_e_tipo_sem_cedilha_valem(self):
+        _, r = self.conferir(linha(municipio="sao paulo", tipo="Bandeiraco"))
+        self.assertEqual(r.erros, [])
+
+    def test_uf_diferente_da_pasta(self):
+        _, r = self.conferir(linha(uf="RJ", municipio="Niterói"))
+        self.assertIn("pasta SP", r.erros[0])
+
+    def test_pasta_br_aceita_qualquer_uf(self):
+        _, r = self.conferir(linha(uf="RJ", municipio="Niterói"), nome="acoes/BR/nacional.csv")
+        self.assertEqual(r.erros, [])
+
+    def test_presencial_sem_local(self):
+        _, r = self.conferir(linha(local=""))
+        self.assertIn("local", r.erros[0])
+
+    def test_dado_pessoal(self):
+        for texto in ("Fale com a Ana (11) 91234-5678", "contato: ana@exemplo.org", "zap 11912345678"):
+            _, r = self.conferir(linha(descricao=texto))
+            self.assertEqual(len(r.erros), 1, texto)
+        _, r = self.conferir(linha(descricao="Na rua 25 de Março, 1000, às 10h. https://instagram.com/p/12345678901/"))
+        self.assertEqual(r.erros, [])
+
+    def test_data_passada_so_avisa(self):
+        _, r = self.conferir(linha(data="2026-10-01"))
+        self.assertEqual(r.erros, [])
+        self.assertIn("já passou", r.avisos[0])
+
+    def test_repetida_no_mesmo_arquivo(self):
+        _, r = self.conferir(linha(), linha(titulo="Panfletaço na Feira!"))
+        self.assertIn("ação repetida", r.erros[0])
+
+    def test_repetida_em_outro_arquivo(self):
+        vistas = {k: "acoes/SP/outro.csv, linha 2" for k in validar.chaves_da_acao(
+            {"titulo": "Panfletaço na feira", "data": "2026-10-18", "hora_inicio": "09:00", "municipio": "São Paulo",
+             "fonte_url": "https://exemplo.org/a/1"})}
+        _, r = self.conferir(linha(), vistas=vistas)
+        self.assertIn("acoes/SP/outro.csv", r.erros[0])
+
+    def test_ja_no_mapa_e_erro(self):
+        _, r = self.conferir(linha(titulo="Caminhada da virada!", hora_inicio="10:00"), mapeadas=[MAPEADA])
+        self.assertIn("já está no mapa", r.erros[0])
+        _, r = self.conferir(linha(titulo="Outra coisa", hora_inicio="10:00", fonte_url="https://instagram.com/reel/ABC123"),
+                             mapeadas=[MAPEADA])
+        self.assertIn("já está no mapa", r.erros[0])
+
+    def test_parecida_no_mapa_e_aviso(self):
+        _, r = self.conferir(linha(titulo="Caminhada da Virada SP", hora_inicio="10:30"), mapeadas=[MAPEADA])
+        self.assertEqual(r.erros, [])
+        self.assertIn("pode ser a mesma", r.avisos[0])
+
+    def test_pagina_geral_de_agenda_nao_identifica_a_acao(self):
+        geral = dict(MAPEADA, titulo="Ato no centro", fonte_url="https://comitepopular.org.br/agenda/")
+        _, r = self.conferir(linha(titulo="Feira cultural", hora_inicio="10:00",
+                                   fonte_url="https://comitepopular.org.br/agenda/"), mapeadas=[geral])
+        self.assertEqual((r.erros, r.avisos), ([], []))
+
+    def test_cabecalho_e_separador(self):
+        _, r = self.conferir(texto="titulo;data;hora_inicio\nA;B;C\n")
+        self.assertIn("vírgula", r.erros[0])
+        _, r = self.conferir(texto=CABECALHO.replace("municipio", "cidade") + "\n")
+        self.assertIn("cidade", r.erros[0])
+
+    def test_nome_e_pasta_do_arquivo(self):
+        _, r = self.conferir(linha(), nome="acoes/SP/Meu Arquivo.csv")
+        self.assertIn("letras minúsculas", r.erros[0])
+        _, r = self.conferir(linha(), nome="acoes/XX/teste.csv")
+        self.assertTrue(any("não é uma UF" in e for e in r.erros))
+
+    def test_alteracoes_fora_de_acoes(self):
+        with tempfile.TemporaryDirectory() as pasta:
+            status = pathlib.Path(pasta) / "status.txt"
+            status.write_text("A\tacoes/SP/novo.csv\nM\tferramentas/validar.py\nD\tacoes/RJ/velho.csv\n", encoding="utf-8")
+            r = validar.Relatorio()
+            self.assertEqual(validar.conferir_alteracoes(status, r), ["acoes/SP/novo.csv"])
+            self.assertEqual(len(r.erros), 2)
+
+
+class Comum(unittest.TestCase):
+    def test_link_normalizado(self):
+        self.assertEqual(link_normalizado("https://www.instagram.com/reel/ABC/?igsh=x"), "instagram.com/p/ABC")
+        self.assertEqual(link_normalizado("https://instagram.com/comite/p/ABC/"), "instagram.com/p/ABC")
+
+    def test_tipos(self):
+        self.assertEqual(tipo_canonico("porta_a_porta"), "porta a porta")
+        self.assertIsNone(tipo_canonico("passeata"))
+
+
+if __name__ == "__main__":
+    unittest.main()
