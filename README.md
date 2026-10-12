@@ -1,21 +1,20 @@
 # Compilado de ações
 
-Este repositório recebe **ações em lote**, em CSV ou JSON, para compilar num mapa só as atividades que grupos
-organizados de todo o país fazem para fortalecer a campanha.
+Este repositório recebe **ações em lote**, em CSV ou JSON, para compilar num mapa só as atividades que fortalecem
+a campanha em todo o país.
 
 O objetivo é **unificar** essas ações, **dar visibilidade** a elas e **garantir** que cada uma seja verdadeira e
 segura para quem vai.
 
 ## O que é uma ação
 
-Qualquer atividade para fortalecer a campanha que:
+Qualquer atividade aberta que fortaleça a campanha. Precisa ter:
 
-- tem **dia, hora e lugar** (ou um link, se for online);
-- é **aberta** a quem quiser participar;
-- é chamada por um **grupo organizado da sociedade civil**: comitê, sindicato, coletivo, DCE, movimento, agenda
-  cultural…
+- **dia, hora e lugar** (ou um link, se for online);
+- **portas abertas** a quem quiser participar;
+- um **link público** que a anuncie: post, site, página de inscrição.
 
-Não entram reuniões fechadas, compromissos internos nem perfis de pessoas.
+Não entram reuniões fechadas nem compromissos internos.
 
 ## Como enviar
 
@@ -86,8 +85,8 @@ entre aspas, menos `online` (`true` ou `false`).
 ## Regras
 
 - **Toda ação precisa de uma fonte pública.** É o que permite conferir que ela existe. Sem `fonte_url`, não entra.
-- **Só organizações, nunca pessoas.** Nada de telefone, e-mail ou perfil pessoal em nenhuma coluna. Opinião política
-  é dado sensível (LGPD), e quem vai a uma ação precisa estar protegido.
+- **Sem dados de contato.** Nada de telefone ou e-mail em nenhum campo. Opinião política é dado sensível (LGPD), e
+  quem organiza e quem vai a uma ação precisam estar protegidos.
 - **Sem repetição.** Se a ação já está em `ja-mapeadas/` ou em outro arquivo de `acoes/`, não mande de novo.
 - **Ações a partir de hoje.** As que já passaram são ignoradas.
 - **Cada envio tem responsável.** Os primeiros envios de cada pessoa são revisados pela equipe. Envio falso ou com
@@ -128,11 +127,11 @@ abra o pull request direto e veja o resultado na aba **Checks**.
 
 ## Para quem programa
 
-Um coletor que lê o site de uma organização (sindicato, DCE, agenda cultural) e gera o JSON vale muito: rode de
+Um coletor que lê um site de agenda (de sindicato, DCE, coletivo cultural…) e gera o JSON vale muito: rode de
 tempos em tempos, compare com [`ja-mapeadas/acoes.json`](ja-mapeadas/acoes.json) e mande as ações novas num pull
 request.
 
-Prefira sites e páginas de organizações. Não use contas pessoais para raspar redes sociais.
+Não use contas pessoais para raspar redes sociais.
 
 ## Prefere não abrir pull request?
 
