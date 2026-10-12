@@ -18,12 +18,14 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.base.sha }}
           path: base
+          persist-credentials: false
 
       - name: Arquivos do pull request
         uses: actions/checkout@v5
         with:
           path: pr
           fetch-depth: 0
+          persist-credentials: false
 
       - uses: actions/setup-python@v6
         with:
@@ -34,7 +36,7 @@ jobs:
           BASE: ${{ github.event.pull_request.base.sha }}
           QUEM: ${{ github.event.pull_request.author_association }}
         run: |
-          git -C pr diff --name-status "$BASE" HEAD > alteracoes.txt
+          git -C pr -c core.quotepath=off diff --name-status "$BASE" HEAD > alteracoes.txt
           cat alteracoes.txt
           EQUIPE=""
           case "$QUEM" in OWNER|MEMBER|COLLABORATOR) EQUIPE="--equipe" ;; esac

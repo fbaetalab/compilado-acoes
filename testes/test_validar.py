@@ -164,6 +164,47 @@ class Validar(unittest.TestCase):
             validar.validar_arquivo(novo, raiz, MUNICIPIOS, [], vistas, HOJE, r)
             self.assertIn("acoes/SP/antigo.json, ação 1", r.erros[0])
 
+    def test_hora_como_a_planilha_exporta(self):
+        _, r = self.conferir(linha(hora_inicio="9:30", hora_fim="11:00:00"))
+        self.assertEqual(r.erros, [])
+        _, r = self.conferir(linha(hora_inicio="9:30:15"))
+        self.assertIn("HH:MM", r.erros[0])
+
+    def test_hora_sem_zero_repete_com_hora_com_zero(self):
+        vistas = {k: "acoes/SP/outro.csv, linha 2" for k in validar.chaves_da_acao(
+            {"titulo": "Panfletaço na feira", "data": "2026-10-18", "hora_inicio": "09:00", "municipio": "São Paulo",
+             "fonte_url": "https://exemplo.org/a/1"})}
+        _, r = self.conferir(linha(hora_inicio="9:00"), vistas=vistas)
+        self.assertIn("ação repetida", r.erros[0])
+
+    def test_outro_arquivo_com_hora_sem_zero(self):
+        with tempfile.TemporaryDirectory() as pasta:
+            raiz = pathlib.Path(pasta)
+            (raiz / "acoes" / "SP").mkdir(parents=True)
+            (raiz / "acoes" / "SP" / "antigo.csv").write_text(CABECALHO + "\n" + linha(hora_inicio="9:00") + "\n",
+                                                              encoding="utf-8")
+            novo = raiz / "acoes" / "SP" / "novo.csv"
+            novo.write_text(CABECALHO + "\n" + linha() + "\n", encoding="utf-8")
+            vistas = validar.acoes_do_repositorio(raiz, {novo.resolve()})
+            r = validar.Relatorio()
+            validar.validar_arquivo(novo, raiz, MUNICIPIOS, [], vistas, HOJE, r)
+            self.assertIn("acoes/SP/antigo.csv, linha 2", r.erros[0])
+
+    @unittest.skipIf(sys.platform == "win32", "criar link simbólico no Windows pede permissão de administrador")
+    def test_link_simbolico_nao_e_lido(self):
+        with tempfile.TemporaryDirectory() as pasta:
+            raiz = pathlib.Path(pasta)
+            (raiz / "acoes" / "SP").mkdir(parents=True)
+            segredo = raiz / "segredo.txt"
+            segredo.write_text("token=abc123\n", encoding="utf-8")
+            link = raiz / "acoes" / "SP" / "x.csv"
+            link.symlink_to(segredo)
+            r = validar.Relatorio()
+            validar.validar_arquivo(link, raiz, MUNICIPIOS, [], {}, HOJE, r)
+            self.assertEqual(len(r.erros), 1)
+            self.assertIn("link simbólico", r.erros[0])
+            self.assertNotIn("abc123", r.erros[0])
+
     def test_cabecalho_e_separador(self):
         _, r = self.conferir(texto="titulo;data;hora_inicio\nA;B;C\n")
         self.assertIn("vírgula", r.erros[0])

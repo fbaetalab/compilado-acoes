@@ -50,10 +50,15 @@ def ler_data(texto: str):
 
 
 def ler_hora(texto: str):
-    m = re.fullmatch(r"(\d{2}):(\d{2})", texto)
+    """Minutos desde 0h. Aceita também 9:30 e 09:30:00, como as planilhas costumam exportar."""
+    m = re.fullmatch(r"(\d{1,2}):(\d{2})(?::00)?", texto)
     if not m or int(m.group(1)) > 23 or int(m.group(2)) > 59:
         return None
     return int(m.group(1)) * 60 + int(m.group(2))
+
+
+def hora_canonica(minutos: int) -> str:
+    return f"{minutos // 60:02d}:{minutos % 60:02d}"
 
 
 def carregar_mapeadas(caminho: pathlib.Path) -> list[dict]:
@@ -107,7 +112,7 @@ def comparar_com_mapeadas(a: dict, mapeadas: list[dict], onde: str, r: Relatorio
 def validar_linha(a: dict, onde: str, uf_pasta: str | None, municipios: dict, dia: dt.date, r: Relatorio):
     for col in OBRIGATORIAS:
         if not a[col]:
-            r.erro(onde, f"a coluna {col} é obrigatória")
+            r.erro(onde, f"o campo {col} é obrigatório")
     if a["titulo"] and len(a["titulo"]) > 120:
         r.erro(onde, "o título passa de 120 caracteres")
 
@@ -122,12 +127,16 @@ def validar_linha(a: dict, onde: str, uf_pasta: str | None, municipios: dict, di
     inicio = ler_hora(a["hora_inicio"])
     if a["hora_inicio"] and inicio is None:
         r.erro(onde, f"hora_inicio \"{a['hora_inicio']}\" fora do formato HH:MM (por exemplo, 09:30)")
+    elif inicio is not None:
+        a["hora_inicio"] = hora_canonica(inicio)
     if a["hora_fim"]:
         fim = ler_hora(a["hora_fim"])
         if fim is None:
             r.erro(onde, f"hora_fim \"{a['hora_fim']}\" fora do formato HH:MM")
         elif inicio is not None and fim <= inicio:
             r.erro(onde, "hora_fim é antes da hora_inicio")
+        else:
+            a["hora_fim"] = hora_canonica(fim)
 
     if a["tipo"]:
         canonico = tipo_canonico(a["tipo"])
@@ -138,12 +147,12 @@ def validar_linha(a: dict, onde: str, uf_pasta: str | None, municipios: dict, di
 
     online = chave(a["online"])
     if online not in ("", "sim", "nao"):
-        r.erro(onde, "a coluna online aceita só sim, não ou vazio")
+        r.erro(onde, "o campo online aceita só sim, não ou vazio (no JSON, true ou false)")
     a["online"] = "sim" if online == "sim" else ""
     if not a["online"]:
         for col in ("uf", "municipio", "local"):
             if not a[col]:
-                r.erro(onde, f"a coluna {col} é obrigatória para ação presencial (ou marque online = sim)")
+                r.erro(onde, f"o campo {col} é obrigatório para ação presencial (ou marque online = sim)")
     if a["uf"]:
         uf = a["uf"].strip().upper()
         if uf not in UFS:
@@ -169,7 +178,7 @@ def validar_linha(a: dict, onde: str, uf_pasta: str | None, municipios: dict, di
     for col in SEM_DADO_PESSOAL:
         texto = URL.sub(" ", a[col])
         if EMAIL.search(texto) or TELEFONE.search(texto):
-            r.erro(onde, f"a coluna {col} tem e-mail ou telefone; tire os dados pessoais")
+            r.erro(onde, f"o campo {col} tem e-mail ou telefone; tire os dados pessoais")
 
 
 def ler_csv(texto: str, nome: str, r: Relatorio) -> list[tuple[str, dict]] | None:
@@ -245,6 +254,9 @@ def ler_json(texto: str, nome: str, r: Relatorio) -> list[tuple[str, dict]] | No
 
 
 def ler_acoes(caminho: pathlib.Path, nome: str, r: Relatorio) -> list[tuple[str, dict]] | None:
+    if caminho.is_symlink():
+        r.erro(nome, "o arquivo é um link simbólico; envie o arquivo de verdade")
+        return None
     try:
         texto = caminho.read_bytes().decode("utf-8-sig")
     except UnicodeDecodeError:
@@ -306,7 +318,9 @@ def acoes_do_repositorio(raiz: pathlib.Path, conferidos: set) -> dict:
             continue
         nome = arq.relative_to(raiz).as_posix()
         for ref, a in ler_acoes(arq, nome, Relatorio()) or []:
-            if a["titulo"] and a["data"] and a["hora_inicio"]:
+            minutos = ler_hora(a["hora_inicio"])
+            if a["titulo"] and a["data"] and minutos is not None:
+                a["hora_inicio"] = hora_canonica(minutos)
                 for k in chaves_da_acao(a):
                     vistas.setdefault(k, f"{nome}, {ref}")
     return vistas
@@ -331,7 +345,8 @@ def conferir_alteracoes(caminho: pathlib.Path, r: Relatorio, equipe: bool = Fals
         elif de_acoes:
             arquivos.append(alvo)
         elif not equipe:
-            r.erro(alvo, "o pull request mexe num arquivo fora de acoes/; envie só os seus arquivos de ações")
+            r.erro(alvo, "o pull request mexe num arquivo que não é de ações (.csv ou .json em acoes/<UF>/); "
+                         "envie só os seus arquivos de ações")
     return arquivos
 
 
