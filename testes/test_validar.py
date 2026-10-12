@@ -109,6 +109,23 @@ class Validar(unittest.TestCase):
                                    fonte_url="https://comitepopular.org.br/agenda/"), mapeadas=[geral])
         self.assertEqual((r.erros, r.avisos), ([], []))
 
+    def test_pagina_geral_de_agenda_nao_repete_entre_arquivos(self):
+        geral = "https://comitepopular.org.br/agenda/"
+        vistas = {k: "acoes/RJ/outro.csv, linha 2" for k in validar.chaves_da_acao(
+            {"titulo": "Ato no Rio", "data": "2026-10-18", "hora_inicio": "09:00", "municipio": "Rio de Janeiro",
+             "fonte_url": geral})}
+        _, r = self.conferir(linha(fonte_url=geral), vistas=vistas)
+        self.assertEqual(r.erros, [])
+
+    def test_quebra_de_linha_dentro_de_aspas(self):
+        _, r = self.conferir(linha(descricao="primeira linha\nsegunda linha"), linha(data="18-10-2026"))
+        self.assertEqual(len(r.erros), 1)
+        self.assertIn("linha 4", r.erros[0])
+
+    def test_primeira_linha_vazia(self):
+        _, r = self.conferir(texto="\n" + CABECALHO + "\n")
+        self.assertIn("sem cabeçalho", r.erros[0])
+
     def test_cabecalho_e_separador(self):
         _, r = self.conferir(texto="titulo;data;hora_inicio\nA;B;C\n")
         self.assertIn("vírgula", r.erros[0])
@@ -124,10 +141,15 @@ class Validar(unittest.TestCase):
     def test_alteracoes_fora_de_acoes(self):
         with tempfile.TemporaryDirectory() as pasta:
             status = pathlib.Path(pasta) / "status.txt"
-            status.write_text("A\tacoes/SP/novo.csv\nM\tferramentas/validar.py\nD\tacoes/RJ/velho.csv\n", encoding="utf-8")
+            status.write_text("A\tacoes/SP/novo.csv\nM\tferramentas/validar.py\nD\tacoes/RJ/velho.csv\n"
+                              "M\tacoes/BA/de-outra-pessoa.csv\nR100\tacoes/PE/a.csv\tacoes/PE/b.csv\n", encoding="utf-8")
             r = validar.Relatorio()
             self.assertEqual(validar.conferir_alteracoes(status, r), ["acoes/SP/novo.csv"])
-            self.assertEqual(len(r.erros), 2)
+            self.assertEqual(len(r.erros), 4)
+            r = validar.Relatorio()
+            self.assertEqual(validar.conferir_alteracoes(status, r, equipe=True),
+                             ["acoes/SP/novo.csv", "acoes/BA/de-outra-pessoa.csv", "acoes/PE/b.csv"])
+            self.assertEqual(r.erros, [])
 
 
 class Comum(unittest.TestCase):

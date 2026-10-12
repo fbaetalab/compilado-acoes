@@ -5,10 +5,6 @@ Este repositório recebe **ações da campanha em lote**, em CSV, para entrarem 
 O objetivo é **unificar** as ações das organizações de todo o país num lugar só, **dar visibilidade** a elas e
 **garantir** que cada uma seja verdadeira e segura para quem vai.
 
-> **Tem só algumas ações?** Não precisa deste repositório. Em [boralula.org](https://boralula.org), abra
-> "Divulgar um evento público", cole o link do post e toque em "Preencher pelo post". O formulário se preenche
-> sozinho; você confere e envia.
-
 ## O que é uma ação
 
 Uma atividade pública da campanha que:
@@ -35,7 +31,13 @@ Não entram reuniões fechadas, compromissos internos nem perfis de pessoas.
 4. **Abra um pull request** com o arquivo em `acoes/<UF>/`, por exemplo `acoes/SP/comites-zona-leste.csv`.
    Ações de várias UFs vão em `acoes/BR/`. Nome do arquivo: letras minúsculas, números e hífen.
 
-Para mandar mais ações depois, crie um arquivo novo ou acrescente linhas ao seu.
+Para mandar mais ações depois, **crie um arquivo novo** (por exemplo `comites-zona-leste-2.csv`): um pull
+request não pode mudar arquivos que já estão no repositório.
+
+## Poucas ações? Pelo boralula.org
+
+Para algumas ações, não precisa deste repositório. Em [boralula.org](https://boralula.org), abra "Divulgar um evento
+público", cole o link do post e toque em "Preencher pelo post": o formulário se preenche sozinho, você confere e envia.
 
 ## As colunas
 

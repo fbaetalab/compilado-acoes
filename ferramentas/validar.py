@@ -9,6 +9,7 @@ import argparse
 import csv
 import datetime as dt
 import difflib
+import io
 import pathlib
 import re
 import sys
@@ -62,14 +63,15 @@ def carregar_mapeadas(caminho: pathlib.Path) -> list[dict]:
 def chaves_da_acao(a: dict) -> list[tuple]:
     """As formas de reconhecer a mesma ação: mesmo link + dia + hora, ou mesmo título + dia + hora + cidade."""
     ks = [("titulo", a["data"], a["hora_inicio"], chave(a.get("municipio", "")), chave(a["titulo"]))]
-    if link_normalizado(a.get("fonte_url", "")):
-        ks.append(("link", a["data"], a["hora_inicio"], link_normalizado(a["fonte_url"])))
+    link = link_normalizado(a.get("fonte_url", ""))
+    if link_especifico(link):
+        ks.append(("link", a["data"], a["hora_inicio"], link))
     return ks
 
 
 def link_especifico(link: str) -> bool:
     """Um post ou uma página de uma ação só; a página geral de uma agenda (exemplo.org/agenda) não identifica a ação."""
-    return link.startswith("instagram.com/p/") or link.count("/") >= 2
+    return bool(link) and (link.startswith("instagram.com/p/") or link.count("/") >= 2)
 
 
 def comparar_com_mapeadas(a: dict, mapeadas: list[dict], onde: str, r: Relatorio):
@@ -191,12 +193,17 @@ def validar_arquivo(caminho: pathlib.Path, raiz: pathlib.Path, municipios: dict,
     except UnicodeDecodeError:
         r.erro(nome, "o arquivo não está em UTF-8 (no Excel: Salvar como → CSV UTF-8)")
         return 0
-    linhas = list(csv.reader(texto.splitlines()))
-    if not linhas:
-        r.erro(nome, "arquivo vazio")
+    try:
+        leitor = csv.reader(io.StringIO(texto, newline=""))
+        linhas = [(leitor.line_num, valores) for valores in leitor]
+    except csv.Error as e:
+        r.erro(nome, f"o CSV está quebrado ({e}); confira as aspas")
         return 0
-    cabecalho = [c.strip().lower() for c in linhas[0]]
-    if ";" in linhas[0][0] and len(cabecalho) == 1:
+    if not linhas or not linhas[0][1]:
+        r.erro(nome, "arquivo vazio ou sem cabeçalho na primeira linha")
+        return 0
+    cabecalho = [c.strip().lower() for c in linhas[0][1]]
+    if ";" in linhas[0][1][0] and len(cabecalho) == 1:
         r.erro(nome, "o separador precisa ser vírgula, não ponto e vírgula")
         return 0
     desconhecidas = [c for c in cabecalho if c not in COLUNAS]
@@ -212,7 +219,7 @@ def validar_arquivo(caminho: pathlib.Path, raiz: pathlib.Path, municipios: dict,
         return 0
 
     total = 0
-    for n, valores in enumerate(linhas[1:], start=2):
+    for n, valores in linhas[1:]:
         if not any(v.strip() for v in valores):
             continue
         onde = f"{nome}, linha {n}"
@@ -245,10 +252,11 @@ def acoes_do_repositorio(raiz: pathlib.Path, conferidos: set) -> dict:
         if arq.resolve() in conferidos:
             continue
         try:
-            linhas = list(csv.DictReader(arq.read_text(encoding="utf-8-sig").splitlines()))
+            leitor = csv.DictReader(io.StringIO(arq.read_text(encoding="utf-8-sig"), newline=""))
+            linhas = [(leitor.line_num, a) for a in leitor]
         except (UnicodeDecodeError, csv.Error):
             continue
-        for n, a in enumerate(linhas, start=2):
+        for n, a in linhas:
             if not all(k in a and a[k] is not None for k in ("titulo", "data", "hora_inicio", "fonte_url")):
                 continue
             a = {k: (v or "").strip() for k, v in a.items() if k}
@@ -258,8 +266,9 @@ def acoes_do_repositorio(raiz: pathlib.Path, conferidos: set) -> dict:
 
 
 def conferir_alteracoes(caminho: pathlib.Path, r: Relatorio, equipe: bool = False) -> list[str]:
-    """No GitHub: a saída de `git diff --name-status`. Pull request de fora da equipe só pode criar ou mudar CSVs
-    em acoes/; o da equipe também mexe no resto (e só os CSVs de acoes/ são conferidos)."""
+    """No GitHub: a saída de `git diff --name-status`. Pull request de fora da equipe só pode criar CSVs em acoes/
+    (mudar, renomear ou apagar um arquivo que já existe mexeria nas ações de outra pessoa); o da equipe mexe em tudo, e
+    só os CSVs de acoes/ são conferidos."""
     arquivos = []
     for linha in caminho.read_text(encoding="utf-8").splitlines():
         if not linha.strip():
@@ -270,6 +279,8 @@ def conferir_alteracoes(caminho: pathlib.Path, r: Relatorio, equipe: bool = Fals
         if status.startswith("D"):
             if not equipe:
                 r.erro(alvo, "o pull request apaga um arquivo; só a equipe pode apagar")
+        elif not equipe and dos_csvs and not status.startswith(("A", "C")):
+            r.erro(alvo, "o pull request muda um arquivo que já existe; para mandar mais ações, crie um arquivo novo")
         elif dos_csvs:
             arquivos.append(alvo)
         elif not equipe:
