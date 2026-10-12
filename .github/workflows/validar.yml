@@ -34,14 +34,15 @@ jobs:
       - name: Conferir os arquivos de ações
         env:
           BASE: ${{ github.event.pull_request.base.sha }}
-          QUEM: ${{ github.event.pull_request.author_association }}
+          # Branch no próprio repositório só quem tem permissão de escrita cria; quem é de fora envia de um fork
+          DE_DENTRO: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
         run: |
           git -C pr -c core.quotepath=off diff --name-status "$BASE" HEAD > alteracoes.txt
           cat alteracoes.txt
           EQUIPE=""
-          case "$QUEM" in OWNER|MEMBER|COLLABORATOR) EQUIPE="--equipe" ;; esac
+          if [ "$DE_DENTRO" = "true" ]; then EQUIPE="--equipe"; fi
           python base/ferramentas/validar.py --raiz pr --alteracoes alteracoes.txt $EQUIPE
 
       - name: Testes (pull request da equipe)
-        if: contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.pull_request.author_association)
+        if: github.event.pull_request.head.repo.full_name == github.repository
         run: python -m unittest discover pr/testes
