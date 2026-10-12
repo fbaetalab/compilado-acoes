@@ -1,18 +1,19 @@
 # Compilado de ações
 
-Este repositório recebe **ações da campanha em lote**, em CSV ou JSON, para compilar num mapa só as ações das
-organizações de todo o país.
+Este repositório recebe **ações em lote**, em CSV ou JSON, para compilar num mapa só as atividades que grupos
+organizados de todo o país fazem para fortalecer a campanha.
 
 O objetivo é **unificar** essas ações, **dar visibilidade** a elas e **garantir** que cada uma seja verdadeira e
 segura para quem vai.
 
 ## O que é uma ação
 
-Uma atividade pública da campanha que:
+Qualquer atividade para fortalecer a campanha que:
 
 - tem **dia, hora e lugar** (ou um link, se for online);
 - é **aberta** a quem quiser participar;
-- é chamada por uma **organização**: comitê, sindicato, coletivo, DCE, movimento, partido, agenda cultural…
+- é chamada por um **grupo organizado da sociedade civil**: comitê, sindicato, coletivo, DCE, movimento, agenda
+  cultural…
 
 Não entram reuniões fechadas, compromissos internos nem perfis de pessoas.
 
