@@ -1,4 +1,4 @@
-# Confere os CSVs de cada pull request. O validador que roda é o da main (base), nunca o do pull request:
+# Confere os arquivos de ações (CSV ou JSON) de cada pull request. O validador que roda é o da main (base), nunca o do pull request:
 # quem envia não consegue mudar a regra que confere o próprio envio.
 name: Conferir ações
 
@@ -29,7 +29,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Conferir os CSVs
+      - name: Conferir os arquivos de ações
         env:
           BASE: ${{ github.event.pull_request.base.sha }}
           QUEM: ${{ github.event.pull_request.author_association }}
