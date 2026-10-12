@@ -1,4 +1,4 @@
-"""Atualiza ja-mapeadas/acoes.csv com as ações que já estão no boralula.org, de hoje em diante.
+"""Atualiza ja-mapeadas/acoes.csv e acoes.json com as ações que já estão no boralula.org, de hoje em diante.
 
     python ferramentas/atualizar_mapeadas.py
 
@@ -77,7 +77,11 @@ def main() -> int:
         w = csv.DictWriter(f, fieldnames=COLUNAS, lineterminator="\n")
         w.writeheader()
         w.writerows(resultado)
-    print(f"{len(resultado)} ações de hoje em diante em {SAIDA.relative_to(RAIZ).as_posix()}.")
+    # A mesma lista em JSON, para quem compara no próprio coletor ("online" vira true/false, como no envio)
+    em_json = [{**l, "online": l["online"] == "sim"} for l in resultado]
+    SAIDA.with_suffix(".json").write_text(json.dumps(em_json, ensure_ascii=False, indent=1) + "\n",
+                                          encoding="utf-8", newline="\n")
+    print(f"{len(resultado)} ações de hoje em diante em ja-mapeadas/acoes.csv e ja-mapeadas/acoes.json.")
     return 0
 
 

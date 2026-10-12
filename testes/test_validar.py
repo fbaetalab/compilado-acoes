@@ -1,5 +1,6 @@
 """Testes do validador: python -m unittest discover testes"""
 import datetime as dt
+import json
 import pathlib
 import sys
 import tempfile
@@ -126,6 +127,43 @@ class Validar(unittest.TestCase):
         _, r = self.conferir(texto="\n" + CABECALHO + "\n")
         self.assertIn("sem cabeçalho", r.erros[0])
 
+    def test_json_certo_passa(self):
+        texto = json.dumps([
+            {"titulo": "Panfletaço na feira", "data": "2026-10-18", "hora_inicio": "09:00", "tipo": "panfletagem",
+             "uf": "SP", "municipio": "São Paulo", "local": "Feira da Rua X", "fonte_url": "https://exemplo.org/a/1"},
+            {"titulo": "Conversa online", "data": "2026-10-19", "hora_inicio": "20:00", "tipo": "encontro",
+             "online": True, "fonte_url": "https://exemplo.org/sala/2", "hora_fim": None},
+        ], ensure_ascii=False)
+        total, r = self.conferir(texto=texto, nome="acoes/SP/coletor.json")
+        self.assertEqual((total, r.erros, r.avisos), (2, [], []))
+
+    def test_json_com_problemas(self):
+        _, r = self.conferir(texto='[{"titulo": "A",}]', nome="acoes/SP/x.json")
+        self.assertIn("JSON inválido na linha 1", r.erros[0])
+        _, r = self.conferir(texto='{"titulo": "A"}', nome="acoes/SP/x.json")
+        self.assertIn("lista de ações", r.erros[0])
+        _, r = self.conferir(texto='[{"titulo": "A", "cidade": "Recife"}, {"titulo": "B", "data": 20261018}, "C"]',
+                             nome="acoes/SP/x.json")
+        self.assertEqual(len(r.erros), 3)
+        self.assertIn("ação 1", r.erros[0])
+        self.assertIn("cidade", r.erros[0])
+        self.assertIn("texto entre aspas", r.erros[1])
+        self.assertIn("ação 3", r.erros[2])
+
+    def test_json_e_csv_se_enxergam_como_repetidos(self):
+        acao = {"titulo": "Panfletaço na feira", "data": "2026-10-18", "hora_inicio": "09:00", "tipo": "panfletagem",
+                "uf": "SP", "municipio": "São Paulo", "local": "Feira", "fonte_url": "https://exemplo.org/a/1"}
+        with tempfile.TemporaryDirectory() as pasta:
+            raiz = pathlib.Path(pasta)
+            (raiz / "acoes" / "SP").mkdir(parents=True)
+            (raiz / "acoes" / "SP" / "antigo.json").write_text(json.dumps([acao]), encoding="utf-8")
+            novo = raiz / "acoes" / "SP" / "novo.csv"
+            novo.write_text(CABECALHO + "\n" + linha() + "\n", encoding="utf-8")
+            vistas = validar.acoes_do_repositorio(raiz, {novo.resolve()})
+            r = validar.Relatorio()
+            validar.validar_arquivo(novo, raiz, MUNICIPIOS, [], vistas, HOJE, r)
+            self.assertIn("acoes/SP/antigo.json, ação 1", r.erros[0])
+
     def test_cabecalho_e_separador(self):
         _, r = self.conferir(texto="titulo;data;hora_inicio\nA;B;C\n")
         self.assertIn("vírgula", r.erros[0])
@@ -141,14 +179,16 @@ class Validar(unittest.TestCase):
     def test_alteracoes_fora_de_acoes(self):
         with tempfile.TemporaryDirectory() as pasta:
             status = pathlib.Path(pasta) / "status.txt"
-            status.write_text("A\tacoes/SP/novo.csv\nM\tferramentas/validar.py\nD\tacoes/RJ/velho.csv\n"
-                              "M\tacoes/BA/de-outra-pessoa.csv\nR100\tacoes/PE/a.csv\tacoes/PE/b.csv\n", encoding="utf-8")
+            status.write_text("A\tacoes/SP/novo.csv\nA\tacoes/SP/coletor.json\nM\tferramentas/validar.py\n"
+                              "D\tacoes/RJ/velho.csv\nM\tacoes/BA/de-outra-pessoa.csv\n"
+                              "R100\tacoes/PE/a.csv\tacoes/PE/b.csv\n", encoding="utf-8")
             r = validar.Relatorio()
-            self.assertEqual(validar.conferir_alteracoes(status, r), ["acoes/SP/novo.csv"])
+            self.assertEqual(validar.conferir_alteracoes(status, r), ["acoes/SP/novo.csv", "acoes/SP/coletor.json"])
             self.assertEqual(len(r.erros), 4)
             r = validar.Relatorio()
             self.assertEqual(validar.conferir_alteracoes(status, r, equipe=True),
-                             ["acoes/SP/novo.csv", "acoes/BA/de-outra-pessoa.csv", "acoes/PE/b.csv"])
+                             ["acoes/SP/novo.csv", "acoes/SP/coletor.json", "acoes/BA/de-outra-pessoa.csv",
+                              "acoes/PE/b.csv"])
             self.assertEqual(r.erros, [])
 
 

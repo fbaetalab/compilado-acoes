@@ -1,6 +1,6 @@
 # Ações para o boralula.org
 
-Este repositório recebe **ações da campanha em lote**, em CSV, para entrarem no mapa do [boralula.org](https://boralula.org).
+Este repositório recebe **ações da campanha em lote**, em CSV ou JSON, para entrarem no mapa do [boralula.org](https://boralula.org).
 
 O objetivo é **unificar** as ações das organizações de todo o país num lugar só, **dar visibilidade** a elas e
 **garantir** que cada uma seja verdadeira e segura para quem vai.
@@ -17,19 +17,24 @@ Não entram reuniões fechadas, compromissos internos nem perfis de pessoas.
 
 ## Como enviar
 
-1. **Confira o que já está no mapa** em [`ja-mapeadas/acoes.csv`](ja-mapeadas/acoes.csv). A lista é atualizada a
-   cada hora com as ações de hoje em diante.
-2. **Copie o modelo** [`modelo/acoes.csv`](modelo/acoes.csv) e preencha **uma linha por ação**. Pode ser no Google
-   Sheets ou no Excel (salve como **CSV UTF-8**, separado por vírgula) ou gerado por um script. Veja o
-   [exemplo](exemplos/acoes-exemplo.csv).
+1. **Confira o que já está no mapa** em [`ja-mapeadas/`](ja-mapeadas/): as ações que já estão no boralula.org, de
+   hoje em diante, em [CSV](ja-mapeadas/acoes.csv) e em [JSON](ja-mapeadas/acoes.json). A lista é atualizada a cada
+   hora, e o validador compara o seu arquivo com ela.
+2. **Monte o arquivo** no formato que for mais fácil para você:
+   - **CSV**, para quem trabalha em planilha: copie [`modelo/acoes.csv`](modelo/acoes.csv) e preencha **uma linha por
+     ação**. No Google Sheets: Arquivo → Fazer download → CSV. No Excel: Salvar como → **CSV UTF-8**.
+     Veja o [exemplo](exemplos/acoes-exemplo.csv).
+   - **JSON**, para quem gera por script: uma lista de objetos com os mesmos campos
+     ([modelo](modelo/acoes.json), [exemplo](exemplos/acoes-exemplo.json)).
 3. **Rode o validador** (recomendado):
 
    ```sh
    python ferramentas/validar.py acoes/SP/comites-zona-leste.csv
    ```
 
-4. **Abra um pull request** com o arquivo em `acoes/<UF>/`, por exemplo `acoes/SP/comites-zona-leste.csv`.
-   Ações de várias UFs vão em `acoes/BR/`. Nome do arquivo: letras minúsculas, números e hífen.
+4. **Abra um pull request** com o arquivo em `acoes/<UF>/`, por exemplo `acoes/SP/comites-zona-leste.csv` ou
+   `acoes/SP/coletor-sindicato.json`. Ações de várias UFs vão em `acoes/BR/`. Nome do arquivo: letras minúsculas,
+   números e hífen.
 
 Para mandar mais ações depois, **crie um arquivo novo** (por exemplo `comites-zona-leste-2.csv`): um pull
 request não pode mudar arquivos que já estão no repositório.
@@ -39,9 +44,11 @@ request não pode mudar arquivos que já estão no repositório.
 Para algumas ações, não precisa deste repositório. Em [boralula.org](https://boralula.org), abra "Divulgar um evento
 público", cole o link do post e toque em "Preencher pelo post": o formulário se preenche sozinho, você confere e envia.
 
-## As colunas
+## Os campos
 
-| coluna | obrigatória | como preencher | exemplo |
+Os mesmos no CSV (colunas, todas presentes no cabeçalho) e no JSON (chaves; as opcionais podem faltar).
+
+| campo | obrigatório | como preencher | exemplo |
 |---|---|---|---|
 | `titulo` | sim | curto, dizendo o que é a ação (até 120 caracteres) | Panfletaço na Praça da Sé |
 | `data` | sim | AAAA-MM-DD | 2026-10-18 |
@@ -54,21 +61,37 @@ público", cole o link do post e toque em "Preencher pelo post": o formulário s
 | `bairro` | não | | Sé |
 | `local` | sim, se presencial | onde as pessoas se encontram | Praça da Sé, em frente à catedral |
 | `endereco` | não | rua e número | Praça da Sé, s/n |
-| `online` | não | `sim` para ação online (aí uf, município e local podem ficar vazios) | não |
+| `online` | não | `sim` (no JSON, `true`) para ação online; aí uf, município e local podem ficar vazios | não |
 | `fonte_url` | **sim** | **link público que anuncia a ação**: post, site, página de inscrição | https://www.instagram.com/p/… |
 | `descricao` | não | uma ou duas frases | Distribuição de material na feira. |
 
 **Tipos:** `ato`, `caminhada`, `panfletagem`, `encontro`, `cultural`, `bandeiraço`, `adesivaço`, `porta a porta`,
 `outro`. Sem acento também vale (`bandeiraco`, `porta_a_porta`).
 
-Texto com vírgula vai entre aspas: `"Praça da Sé, em frente à catedral"`.
+No CSV, texto com vírgula vai entre aspas: `"Praça da Sé, em frente à catedral"`. No JSON, todo valor é texto
+entre aspas, menos `online` (`true` ou `false`).
+
+```json
+[
+  {
+    "titulo": "Panfletaço na Praça da Sé",
+    "data": "2026-10-18",
+    "hora_inicio": "10:00",
+    "tipo": "panfletagem",
+    "uf": "SP",
+    "municipio": "São Paulo",
+    "local": "Praça da Sé, em frente à catedral",
+    "fonte_url": "https://www.instagram.com/p/…"
+  }
+]
+```
 
 ## Regras
 
 - **Toda ação precisa de uma fonte pública.** É o que permite conferir que ela existe. Sem `fonte_url`, não entra.
 - **Só organizações, nunca pessoas.** Nada de telefone, e-mail ou perfil pessoal em nenhuma coluna. Opinião política
   é dado sensível (LGPD), e quem vai a uma ação precisa estar protegido.
-- **Sem repetição.** Se a ação já está em `ja-mapeadas/acoes.csv` ou em outro arquivo de `acoes/`, não mande de novo.
+- **Sem repetição.** Se a ação já está em `ja-mapeadas/` ou em outro arquivo de `acoes/`, não mande de novo.
 - **Ações a partir de hoje.** As que já passaram são ignoradas.
 - **Cada envio tem responsável.** Os primeiros envios de cada pessoa são revisados pela equipe. Envio falso ou com
   dados pessoais é removido, e a conta é bloqueada.
@@ -79,11 +102,12 @@ O `ferramentas/validar.py` confere o arquivo antes do envio. Roda com Python 3.1
 nada.
 
 ```sh
-python ferramentas/validar.py acoes/SP/meu-arquivo.csv   # um arquivo
-python ferramentas/validar.py acoes/SP/                  # todos os CSVs de uma pasta
+python ferramentas/validar.py acoes/SP/meu-arquivo.csv   # um arquivo CSV
+python ferramentas/validar.py acoes/SP/coletor.json      # ou JSON
+python ferramentas/validar.py acoes/SP/                  # todos os arquivos de uma pasta
 ```
 
-Ele aponta a linha e o problema:
+Ele aponta a linha (no CSV) ou o número da ação (no JSON) e o problema:
 
 ```
 ERRO   acoes/SP/meu-arquivo.csv, linha 4: data "18/10/2026" fora do formato AAAA-MM-DD (por exemplo, 2026-10-18)
@@ -103,12 +127,13 @@ abra o pull request direto e veja o resultado na aba **Checks**.
 1. O GitHub confere o pull request com o validador.
 2. Sem erro, a equipe faz o merge.
 3. As ações entram no boralula.org e aparecem no mapa, com a fonte de cada uma.
-4. Na próxima atualização, elas passam a constar em `ja-mapeadas/acoes.csv`.
+4. Na próxima atualização, elas passam a constar em `ja-mapeadas/`.
 
 ## Para quem programa
 
-Um coletor que lê o site de uma organização (sindicato, DCE, agenda cultural) e gera este CSV vale muito: rode de
-tempos em tempos e mande as ações novas num pull request.
+Um coletor que lê o site de uma organização (sindicato, DCE, agenda cultural) e gera o JSON vale muito: rode de
+tempos em tempos, compare com [`ja-mapeadas/acoes.json`](ja-mapeadas/acoes.json) e mande as ações novas num pull
+request.
 
 Prefira sites e páginas de organizações. Não use contas pessoais para raspar redes sociais.
 
@@ -116,10 +141,10 @@ Prefira sites e páginas de organizações. Não use contas pessoais para raspar
 
 | pasta | o quê |
 |---|---|
-| `acoes/` | os CSVs enviados, um subdiretório por UF |
-| `ja-mapeadas/` | as ações que já estão no boralula.org, de hoje em diante (atualizada a cada hora) |
-| `modelo/` | o CSV vazio, só com o cabeçalho |
-| `exemplos/` | um CSV preenchido de exemplo (ações fictícias) |
+| `acoes/` | os arquivos enviados (CSV ou JSON), um subdiretório por UF |
+| `ja-mapeadas/` | as ações que já estão no boralula.org, de hoje em diante, em CSV e JSON (atualizada a cada hora) |
+| `modelo/` | os modelos vazios, em CSV e JSON |
+| `exemplos/` | o mesmo exemplo em CSV e em JSON (ações fictícias) |
 | `ferramentas/` | o validador e a atualização da lista de já mapeadas |
 | `dados/` | os municípios do IBGE, que o validador usa |
 | `testes/` | testes do validador: `python -m unittest discover testes` |

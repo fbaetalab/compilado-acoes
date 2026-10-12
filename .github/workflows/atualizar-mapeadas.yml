@@ -1,4 +1,4 @@
-# A cada hora, traz do boralula.org as ações já mapeadas (ja-mapeadas/acoes.csv), para quem envia conferir repetidas.
+# A cada hora, traz do boralula.org as ações já mapeadas (ja-mapeadas/acoes.csv e .json), para quem envia conferir repetidas.
 name: Atualizar ações já mapeadas
 
 on:
@@ -28,7 +28,7 @@ jobs:
 
       - name: Gravar se mudou
         run: |
-          git add ja-mapeadas/acoes.csv
+          git add ja-mapeadas/
           if git diff --cached --quiet; then
             echo "Nada mudou."
             exit 0

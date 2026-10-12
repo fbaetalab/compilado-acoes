@@ -1,0 +1,42 @@
+[
+  {
+    "titulo": "Panfletaço na Praça da Sé",
+    "data": "2026-10-18",
+    "hora_inicio": "10:00",
+    "hora_fim": "13:00",
+    "tipo": "panfletagem",
+    "organizacao": "Comitê Popular Centro",
+    "uf": "SP",
+    "municipio": "São Paulo",
+    "bairro": "Sé",
+    "local": "Praça da Sé, em frente à catedral",
+    "endereco": "Praça da Sé, s/n",
+    "online": false,
+    "fonte_url": "https://www.instagram.com/p/EXEMPLO1/",
+    "descricao": "Distribuição de material e conversa com quem passa."
+  },
+  {
+    "titulo": "Plenária da juventude",
+    "data": "2026-10-20",
+    "hora_inicio": "18:30",
+    "tipo": "encontro",
+    "organizacao": "DCE Exemplo",
+    "uf": "BA",
+    "municipio": "Salvador",
+    "bairro": "Ondina",
+    "local": "Auditório da Reitoria",
+    "online": false,
+    "fonte_url": "https://exemplo.org/agenda/plenaria-juventude"
+  },
+  {
+    "titulo": "Conversa sobre o 2º turno",
+    "data": "2026-10-21",
+    "hora_inicio": "20:00",
+    "hora_fim": "21:30",
+    "tipo": "encontro",
+    "organizacao": "Coletivo Exemplo",
+    "online": true,
+    "fonte_url": "https://exemplo.org/sala-virtual",
+    "descricao": "Encontro online aberto."
+  }
+]

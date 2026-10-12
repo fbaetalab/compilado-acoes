@@ -1,7 +1,8 @@
-"""Confere CSVs de ações antes do envio. Roda com Python 3.10 ou mais novo, sem instalar nada.
+"""Confere arquivos de ações (CSV ou JSON) antes do envio. Roda com Python 3.10 ou mais novo, sem instalar nada.
 
     python ferramentas/validar.py acoes/SP/comite-centro.csv     # um arquivo
-    python ferramentas/validar.py acoes/                         # todos os CSVs de uma pasta
+    python ferramentas/validar.py acoes/SP/coletor-sindicato.json
+    python ferramentas/validar.py acoes/                         # todos os arquivos de uma pasta
 
 Erro impede o pull request de entrar; aviso só pede atenção. O mesmo script roda no GitHub em cada pull request.
 """
@@ -10,6 +11,7 @@ import csv
 import datetime as dt
 import difflib
 import io
+import json
 import pathlib
 import re
 import sys
@@ -19,7 +21,8 @@ from comum import (COLUNAS, OBRIGATORIAS, RAIZ, TIPOS, UFS, carregar_municipios,
 
 MAX_LINHAS = 2000
 FIM_CAMPANHA = dt.date(2026, 10, 25)
-NOME_ARQUIVO = re.compile(r"^[a-z0-9][a-z0-9-]*\.csv$")
+NOME_ARQUIVO = re.compile(r"^[a-z0-9][a-z0-9-]*\.(csv|json)$")
+FORMATOS = (".csv", ".json")
 URL = re.compile(r"https?://\S+")
 EMAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+")
 # Celular ou fixo com DDD: (11) 91234-5678, 11 91234 5678, +55 11 912345678, 1132345678
@@ -169,6 +172,87 @@ def validar_linha(a: dict, onde: str, uf_pasta: str | None, municipios: dict, di
             r.erro(onde, f"a coluna {col} tem e-mail ou telefone; tire os dados pessoais")
 
 
+def ler_csv(texto: str, nome: str, r: Relatorio) -> list[tuple[str, dict]] | None:
+    """As ações de um CSV, cada uma com onde ela está ("linha 4"). None se o arquivo não dá para ler."""
+    try:
+        leitor = csv.reader(io.StringIO(texto, newline=""))
+        linhas = [(leitor.line_num, valores) for valores in leitor]
+    except csv.Error as e:
+        r.erro(nome, f"o CSV está quebrado ({e}); confira as aspas")
+        return None
+    if not linhas or not linhas[0][1]:
+        r.erro(nome, "arquivo vazio ou sem cabeçalho na primeira linha")
+        return None
+    cabecalho = [c.strip().lower() for c in linhas[0][1]]
+    if ";" in linhas[0][1][0] and len(cabecalho) == 1:
+        r.erro(nome, "o separador precisa ser vírgula, não ponto e vírgula")
+        return None
+    desconhecidas = [c for c in cabecalho if c not in COLUNAS]
+    faltando = [c for c in COLUNAS if c not in cabecalho]
+    if desconhecidas:
+        r.erro(nome, f"colunas que não existem no modelo: {', '.join(desconhecidas)}")
+    if faltando:
+        r.erro(nome, f"faltam colunas do modelo: {', '.join(faltando)} (podem ficar vazias, mas precisam existir)")
+    if desconhecidas or faltando:
+        return None
+    acoes = []
+    for n, valores in linhas[1:]:
+        if not any(v.strip() for v in valores):
+            continue
+        if len(valores) != len(cabecalho):
+            r.erro(f"{nome}, linha {n}", f"a linha tem {len(valores)} colunas e o cabeçalho tem {len(cabecalho)} "
+                                         "(texto com vírgula precisa estar entre aspas)")
+            continue
+        acoes.append((f"linha {n}", {c: v.strip() for c, v in zip(cabecalho, valores)}))
+    return acoes
+
+
+def ler_json(texto: str, nome: str, r: Relatorio) -> list[tuple[str, dict]] | None:
+    """As ações de um JSON: uma lista de objetos com os mesmos campos do CSV. Campo opcional pode faltar."""
+    try:
+        dados = json.loads(texto)
+    except json.JSONDecodeError as e:
+        r.erro(nome, f"JSON inválido na linha {e.lineno}, coluna {e.colno}: {e.msg}")
+        return None
+    if not isinstance(dados, list):
+        r.erro(nome, "o JSON precisa ser uma lista de ações: [ {\"titulo\": ...}, {\"titulo\": ...} ]")
+        return None
+    acoes = []
+    for i, item in enumerate(dados, start=1):
+        onde = f"{nome}, ação {i}"
+        if not isinstance(item, dict):
+            r.erro(onde, "cada ação precisa ser um objeto { ... }")
+            continue
+        desconhecidos = [k for k in item if k not in COLUNAS]
+        if desconhecidos:
+            r.erro(onde, f"campos que não existem no modelo: {', '.join(desconhecidos)}")
+            continue
+        a = {}
+        for c in COLUNAS:
+            v = item.get(c)
+            if v is None:
+                a[c] = ""
+            elif c == "online" and isinstance(v, bool):
+                a[c] = "sim" if v else ""
+            elif isinstance(v, str):
+                a[c] = v.strip()
+            else:
+                r.erro(onde, f"o campo {c} precisa ser texto entre aspas (online também aceita true ou false)")
+                break
+        else:
+            acoes.append((f"ação {i}", a))
+    return acoes
+
+
+def ler_acoes(caminho: pathlib.Path, nome: str, r: Relatorio) -> list[tuple[str, dict]] | None:
+    try:
+        texto = caminho.read_bytes().decode("utf-8-sig")
+    except UnicodeDecodeError:
+        r.erro(nome, "o arquivo não está em UTF-8 (no Excel: Salvar como → CSV UTF-8)")
+        return None
+    return ler_json(texto, nome, r) if caminho.suffix.lower() == ".json" else ler_csv(texto, nome, r)
+
+
 def validar_arquivo(caminho: pathlib.Path, raiz: pathlib.Path, municipios: dict, mapeadas: list[dict],
                     vistas: dict, dia: dt.date, r: Relatorio) -> int:
     """Confere um arquivo e devolve quantas ações ele tem. `vistas` junta as ações de todos os arquivos já lidos."""
@@ -186,49 +270,20 @@ def validar_arquivo(caminho: pathlib.Path, raiz: pathlib.Path, municipios: dict,
             if uf_pasta not in UFS | {"BR"}:
                 r.erro(nome, f"a pasta {uf_pasta} não é uma UF (use a sigla, como SP, ou BR para várias UFs)")
             if not NOME_ARQUIVO.match(partes[2]):
-                r.erro(nome, "use só letras minúsculas, números e hífen no nome do arquivo, terminando em .csv")
+                r.erro(nome, "use só letras minúsculas, números e hífen no nome do arquivo, terminando em .csv ou .json")
 
-    try:
-        texto = caminho.read_bytes().decode("utf-8-sig")
-    except UnicodeDecodeError:
-        r.erro(nome, "o arquivo não está em UTF-8 (no Excel: Salvar como → CSV UTF-8)")
+    erros_antes = len(r.erros)
+    acoes = ler_acoes(caminho, nome, r)
+    if acoes is None:
         return 0
-    try:
-        leitor = csv.reader(io.StringIO(texto, newline=""))
-        linhas = [(leitor.line_num, valores) for valores in leitor]
-    except csv.Error as e:
-        r.erro(nome, f"o CSV está quebrado ({e}); confira as aspas")
-        return 0
-    if not linhas or not linhas[0][1]:
-        r.erro(nome, "arquivo vazio ou sem cabeçalho na primeira linha")
-        return 0
-    cabecalho = [c.strip().lower() for c in linhas[0][1]]
-    if ";" in linhas[0][1][0] and len(cabecalho) == 1:
-        r.erro(nome, "o separador precisa ser vírgula, não ponto e vírgula")
-        return 0
-    desconhecidas = [c for c in cabecalho if c not in COLUNAS]
-    faltando = [c for c in COLUNAS if c not in cabecalho]
-    if desconhecidas:
-        r.erro(nome, f"colunas que não existem no modelo: {', '.join(desconhecidas)}")
-    if faltando:
-        r.erro(nome, f"faltam colunas do modelo: {', '.join(faltando)} (podem ficar vazias, mas precisam existir)")
-    if desconhecidas or faltando:
-        return 0
-    if len(linhas) - 1 > MAX_LINHAS:
+    if len(acoes) > MAX_LINHAS:
         r.erro(nome, f"mais de {MAX_LINHAS} ações num arquivo só; divida em arquivos menores")
         return 0
+    if not acoes and len(r.erros) == erros_antes:
+        r.erro(nome, "o arquivo não tem nenhuma ação")
 
-    total = 0
-    for n, valores in linhas[1:]:
-        if not any(v.strip() for v in valores):
-            continue
-        onde = f"{nome}, linha {n}"
-        if len(valores) != len(cabecalho):
-            r.erro(onde, f"a linha tem {len(valores)} colunas e o cabeçalho tem {len(cabecalho)} "
-                         "(texto com vírgula precisa estar entre aspas)")
-            continue
-        a = {c: v.strip() for c, v in zip(cabecalho, valores)}
-        total += 1
+    for ref, a in acoes:
+        onde = f"{nome}, {ref}"
         erros_antes = len(r.erros)
         validar_linha(a, onde, uf_pasta, municipios, dia, r)
         if len(r.erros) > erros_antes:
@@ -240,59 +295,51 @@ def validar_arquivo(caminho: pathlib.Path, raiz: pathlib.Path, municipios: dict,
         for k in chaves_da_acao(a):
             vistas[k] = onde
         comparar_com_mapeadas(a, mapeadas, onde, r)
-    if total == 0:
-        r.erro(nome, "o arquivo não tem nenhuma ação, só o cabeçalho")
-    return total
+    return len(acoes)
 
 
 def acoes_do_repositorio(raiz: pathlib.Path, conferidos: set) -> dict:
-    """As ações dos CSVs que já estão em acoes/ (menos os que estão sendo conferidos), para achar repetidas."""
+    """As ações dos arquivos que já estão em acoes/ (menos os que estão sendo conferidos), para achar repetidas."""
     vistas: dict = {}
-    for arq in sorted((raiz / "acoes").glob("*/*.csv")):
+    for arq in sorted(a for a in (raiz / "acoes").glob("*/*") if a.suffix.lower() in FORMATOS):
         if arq.resolve() in conferidos:
             continue
-        try:
-            leitor = csv.DictReader(io.StringIO(arq.read_text(encoding="utf-8-sig"), newline=""))
-            linhas = [(leitor.line_num, a) for a in leitor]
-        except (UnicodeDecodeError, csv.Error):
-            continue
-        for n, a in linhas:
-            if not all(k in a and a[k] is not None for k in ("titulo", "data", "hora_inicio", "fonte_url")):
-                continue
-            a = {k: (v or "").strip() for k, v in a.items() if k}
-            for k in chaves_da_acao(a):
-                vistas.setdefault(k, f"{arq.relative_to(raiz).as_posix()}, linha {n}")
+        nome = arq.relative_to(raiz).as_posix()
+        for ref, a in ler_acoes(arq, nome, Relatorio()) or []:
+            if a["titulo"] and a["data"] and a["hora_inicio"]:
+                for k in chaves_da_acao(a):
+                    vistas.setdefault(k, f"{nome}, {ref}")
     return vistas
 
 
 def conferir_alteracoes(caminho: pathlib.Path, r: Relatorio, equipe: bool = False) -> list[str]:
-    """No GitHub: a saída de `git diff --name-status`. Pull request de fora da equipe só pode criar CSVs em acoes/
+    """No GitHub: a saída de `git diff --name-status`. Pull request de fora da equipe só pode criar arquivos em acoes/
     (mudar, renomear ou apagar um arquivo que já existe mexeria nas ações de outra pessoa); o da equipe mexe em tudo, e
-    só os CSVs de acoes/ são conferidos."""
+    só os arquivos de acoes/ são conferidos."""
     arquivos = []
     for linha in caminho.read_text(encoding="utf-8").splitlines():
         if not linha.strip():
             continue
         status, *nomes = linha.split("\t")
         alvo = nomes[-1]
-        dos_csvs = alvo.startswith("acoes/") and alvo.endswith(".csv")
+        de_acoes = alvo.startswith("acoes/") and alvo.lower().endswith(FORMATOS)
         if status.startswith("D"):
             if not equipe:
                 r.erro(alvo, "o pull request apaga um arquivo; só a equipe pode apagar")
-        elif not equipe and dos_csvs and not status.startswith(("A", "C")):
+        elif not equipe and de_acoes and not status.startswith(("A", "C")):
             r.erro(alvo, "o pull request muda um arquivo que já existe; para mandar mais ações, crie um arquivo novo")
-        elif dos_csvs:
+        elif de_acoes:
             arquivos.append(alvo)
         elif not equipe:
-            r.erro(alvo, "o pull request mexe num arquivo fora de acoes/; envie só os seus CSVs")
+            r.erro(alvo, "o pull request mexe num arquivo fora de acoes/; envie só os seus arquivos de ações")
     return arquivos
 
 
 def main(argv=None) -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
-    p = argparse.ArgumentParser(description="Confere CSVs de ações no modelo do boralula.")
-    p.add_argument("caminhos", nargs="*", help="arquivos .csv ou pastas")
+    p = argparse.ArgumentParser(description="Confere arquivos de ações (CSV ou JSON) no modelo do boralula.")
+    p.add_argument("caminhos", nargs="*", help="arquivos .csv ou .json, ou pastas")
     p.add_argument("--raiz", type=pathlib.Path, default=RAIZ, help="onde fica a pasta acoes/ (padrão: este repositório)")
     p.add_argument("--alteracoes", type=pathlib.Path, help="saída de git diff --name-status (usado no GitHub)")
     p.add_argument("--equipe", action="store_true", help="pull request da equipe (pode mexer fora de acoes/)")
@@ -306,13 +353,13 @@ def main(argv=None) -> int:
     arquivos = []
     for c in caminhos:
         if c.is_dir():
-            arquivos += sorted(c.rglob("*.csv"))
-        elif c.suffix.lower() == ".csv" and c.exists():
+            arquivos += sorted(a for a in c.rglob("*") if a.suffix.lower() in FORMATOS)
+        elif c.suffix.lower() in FORMATOS and c.exists():
             arquivos.append(c)
         else:
-            r.erro(str(c), "não é um arquivo .csv")
+            r.erro(str(c), "não é um arquivo .csv ou .json")
     if not arquivos and not r.erros:
-        print("Nenhum CSV para conferir.")
+        print("Nenhum arquivo de ações para conferir.")
         return 0
 
     municipios = carregar_municipios()
