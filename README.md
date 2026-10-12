@@ -1,9 +1,10 @@
-# Ações para o boralula.org
+# Compilado de ações
 
-Este repositório recebe **ações da campanha em lote**, em CSV ou JSON, para entrarem no mapa do [boralula.org](https://boralula.org).
+Este repositório recebe **ações da campanha em lote**, em CSV ou JSON, para compilar num mapa só as ações das
+organizações de todo o país.
 
-O objetivo é **unificar** as ações das organizações de todo o país num lugar só, **dar visibilidade** a elas e
-**garantir** que cada uma seja verdadeira e segura para quem vai.
+O objetivo é **unificar** essas ações, **dar visibilidade** a elas e **garantir** que cada uma seja verdadeira e
+segura para quem vai.
 
 ## O que é uma ação
 
@@ -17,9 +18,9 @@ Não entram reuniões fechadas, compromissos internos nem perfis de pessoas.
 
 ## Como enviar
 
-1. **Confira o que já está no mapa** em [`ja-mapeadas/`](ja-mapeadas/): as ações que já estão no boralula.org, de
-   hoje em diante, em [CSV](ja-mapeadas/acoes.csv) e em [JSON](ja-mapeadas/acoes.json). A lista é atualizada a cada
-   hora, e o validador compara o seu arquivo com ela.
+1. **Confira o mapeamento inicial** em [`ja-mapeadas/`](ja-mapeadas/): as ações já compiladas, de hoje em diante,
+   em [CSV](ja-mapeadas/acoes.csv) e em [JSON](ja-mapeadas/acoes.json). A lista é atualizada a cada hora, e o
+   validador compara o seu arquivo com ela.
 2. **Monte o arquivo** no formato que for mais fácil para você:
    - **CSV**, para quem trabalha em planilha: copie [`modelo/acoes.csv`](modelo/acoes.csv) e preencha **uma linha por
      ação**. No Google Sheets: Arquivo → Fazer download → CSV. No Excel: Salvar como → **CSV UTF-8**.
@@ -38,11 +39,6 @@ Não entram reuniões fechadas, compromissos internos nem perfis de pessoas.
 
 Para mandar mais ações depois, **crie um arquivo novo** (por exemplo `comites-zona-leste-2.csv`): um pull
 request não pode mudar arquivos que já estão no repositório.
-
-## Poucas ações? Pelo boralula.org
-
-Para algumas ações, não precisa deste repositório. Em [boralula.org](https://boralula.org), abra "Divulgar um evento
-público", cole o link do post e toque em "Preencher pelo post": o formulário se preenche sozinho, você confere e envia.
 
 ## Os campos
 
@@ -126,7 +122,7 @@ abra o pull request direto e veja o resultado na aba **Checks**.
 
 1. O GitHub confere o pull request com o validador.
 2. Sem erro, a equipe faz o merge.
-3. As ações entram no boralula.org e aparecem no mapa, com a fonte de cada uma.
+3. As ações entram no mapa, com a fonte de cada uma.
 4. Na próxima atualização, elas passam a constar em `ja-mapeadas/`.
 
 ## Para quem programa
@@ -137,18 +133,24 @@ request.
 
 Prefira sites e páginas de organizações. Não use contas pessoais para raspar redes sociais.
 
+## Prefere não abrir pull request?
+
+Para poucas ações, dá para cadastrar uma por uma pelo site [boralula.org](https://boralula.org): abra "Divulgar um
+evento público", cole o link do post e toque em "Preencher pelo post". O formulário se preenche sozinho; você
+confere e envia.
+
 ## O que tem aqui
 
 | pasta | o quê |
 |---|---|
 | `acoes/` | os arquivos enviados (CSV ou JSON), um subdiretório por UF |
-| `ja-mapeadas/` | as ações que já estão no boralula.org, de hoje em diante, em CSV e JSON (atualizada a cada hora) |
+| `ja-mapeadas/` | o mapeamento inicial: as ações já compiladas, de hoje em diante, em CSV e JSON (atualizado a cada hora) |
 | `modelo/` | os modelos vazios, em CSV e JSON |
 | `exemplos/` | o mesmo exemplo em CSV e em JSON (ações fictícias) |
-| `ferramentas/` | o validador e a atualização da lista de já mapeadas |
+| `ferramentas/` | o validador e a atualização do mapeamento inicial |
 | `dados/` | os municípios do IBGE, que o validador usa |
 | `testes/` | testes do validador: `python -m unittest discover testes` |
 
 ---
 
-Comitê Popular do Lula de Tecnologia · [boralula.org](https://boralula.org)
+Comitê Popular do Lula de Tecnologia

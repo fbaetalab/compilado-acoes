@@ -17,7 +17,7 @@ MUNICIPIOS = carregar_municipios()
 MAPEADA = {"data": "2026-10-18", "hora_inicio": "10:00", "hora_fim": "", "tipo": "ato",
            "titulo": "Caminhada da Virada", "uf": "SP", "municipio": "São Paulo", "bairro": "", "local": "Praça da Sé",
            "online": "", "fonte_url": "https://www.instagram.com/p/ABC123/",
-           "link_boralula": "https://boralula.org/agenda/#/acao/1"}
+           "link": "https://exemplo.org/acao/1"}
 
 
 def linha(**campos) -> str:

@@ -11,7 +11,7 @@ RAIZ = pathlib.Path(__file__).resolve().parent.parent
 COLUNAS = ["titulo", "data", "hora_inicio", "hora_fim", "tipo", "organizacao", "uf", "municipio", "bairro",
            "local", "endereco", "online", "fonte_url", "descricao"]
 OBRIGATORIAS = ["titulo", "data", "hora_inicio", "tipo", "fonte_url"]
-# Os mesmos tipos do boralula.org (a agenda pública usa estes nomes, com acento e espaço)
+# Os mesmos tipos do mapeamento inicial (com acento e espaço)
 TIPOS = ["ato", "caminhada", "panfletagem", "encontro", "cultural", "bandeiraço", "adesivaço", "porta a porta", "outro"]
 UFS = {"AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA", "PB", "PE", "PI", "PR",
        "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO"}

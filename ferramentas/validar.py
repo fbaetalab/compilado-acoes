@@ -99,7 +99,7 @@ def comparar_com_mapeadas(a: dict, mapeadas: list[dict], onde: str, r: Relatorio
         diferenca = abs(outra - minutos) if outra is not None and minutos is not None else 999
         parecido = difflib.SequenceMatcher(None, chave(m["titulo"]), chave(a["titulo"])).ratio()
         mesmo_link = bool(link) and link_normalizado(m.get("fonte_url", "")) == link
-        ref = f"\"{m['titulo']}\" ({m['data']} {m['hora_inicio']}, {m['municipio'] or 'online'}) {m['link_boralula']}"
+        ref = f"\"{m['titulo']}\" ({m['data']} {m['hora_inicio']}, {m['municipio'] or 'online'}) {m['link']}"
         if diferenca == 0 and (mesmo_link or parecido >= 0.6):
             r.erro(onde, f"essa ação já está no mapa: {ref}")
             return
@@ -353,7 +353,7 @@ def conferir_alteracoes(caminho: pathlib.Path, r: Relatorio, equipe: bool = Fals
 def main(argv=None) -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
-    p = argparse.ArgumentParser(description="Confere arquivos de ações (CSV ou JSON) no modelo do boralula.")
+    p = argparse.ArgumentParser(description="Confere arquivos de ações (CSV ou JSON) no modelo do compilado.")
     p.add_argument("caminhos", nargs="*", help="arquivos .csv ou .json, ou pastas")
     p.add_argument("--raiz", type=pathlib.Path, default=RAIZ, help="onde fica a pasta acoes/ (padrão: este repositório)")
     p.add_argument("--alteracoes", type=pathlib.Path, help="saída de git diff --name-status (usado no GitHub)")

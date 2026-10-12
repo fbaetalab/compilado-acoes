@@ -1,10 +1,9 @@
-"""Atualiza ja-mapeadas/acoes.csv e acoes.json com as ações que já estão no boralula.org, de hoje em diante.
+"""Atualiza o mapeamento inicial (ja-mapeadas/acoes.csv e acoes.json): as ações já compiladas, de hoje em diante.
 
     python ferramentas/atualizar_mapeadas.py
 
-Roda sozinho no GitHub a cada hora (.github/workflows/atualizar-mapeadas.yml). Lê a lista pública do site, a mesma que
-o mapa usa, e guarda só o necessário para achar repetidas: nada de contato, de quem cadastrou nem de
-parâmetros dos links.
+Roda sozinho no GitHub a cada hora (.github/workflows/atualizar-mapeadas.yml). Lê a lista pública e guarda só o
+necessário para achar repetidas: nada de contato, de quem cadastrou nem de parâmetros dos links.
 """
 import csv
 import json
@@ -18,11 +17,11 @@ FONTE = "https://boralula.org/agenda/publico.json"
 PAGINA = "https://boralula.org/agenda/#/acao/{}"
 SAIDA = RAIZ / "ja-mapeadas" / "acoes.csv"
 COLUNAS = ["data", "hora_inicio", "hora_fim", "tipo", "titulo", "uf", "municipio", "bairro", "local",
-           "online", "fonte_url", "link_boralula"]
+           "online", "fonte_url", "link"]
 
 
 def baixar() -> dict:
-    pedido = urllib.request.Request(FONTE, headers={"User-Agent": "boralula-acoes (github.com)"})
+    pedido = urllib.request.Request(FONTE, headers={"User-Agent": "compilado-acoes (github.com)"})
     with urllib.request.urlopen(pedido, timeout=60) as resposta:
         return json.load(resposta)
 
@@ -60,7 +59,7 @@ def linhas(publico: dict, municipios: dict) -> list[dict]:
             "local": a.get("lugar_nome") or "",
             "online": "sim" if a.get("online") else "",
             "fonte_url": link if link.startswith(("http://", "https://")) and " " not in link and "%20" not in link else "",
-            "link_boralula": PAGINA.format(a["id"]),
+            "link": PAGINA.format(a["id"]),
         })
     saida.sort(key=lambda l: (l["data"], l["uf"], chave(l["municipio"]), l["hora_inicio"], chave(l["titulo"])))
     return saida

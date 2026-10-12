@@ -1,5 +1,5 @@
-# A cada hora, traz do boralula.org as ações já mapeadas (ja-mapeadas/acoes.csv e .json), para quem envia conferir repetidas.
-name: Atualizar ações já mapeadas
+# A cada hora, atualiza o mapeamento inicial (ja-mapeadas/acoes.csv e .json), para quem envia conferir repetidas.
+name: Atualizar o mapeamento inicial
 
 on:
   schedule:
