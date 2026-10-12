@@ -14,18 +14,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Validador da main
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ github.event.pull_request.base.sha }}
           path: base
 
       - name: Arquivos do pull request
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: pr
           fetch-depth: 0
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
