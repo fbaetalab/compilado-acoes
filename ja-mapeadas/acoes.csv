@@ -1,89 +1,4 @@
 data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url,link
-2026-10-12,15:00,17:00,encontro,"Plenária contra o avanço da extrema-direita, em defesa da educação e da democracia",,,,,sim,https://www.instagram.com/p/DeVJ7YCgSGC/,https://boralula.org/agenda/#/acao/1000492
-2026-10-12,18:00,20:00,outro,Comitê Paraná Mulheres com Lula,,,,,sim,https://us02web.zoom.us/j/82283279378,https://boralula.org/agenda/#/acao/1000164
-2026-10-12,18:00,20:00,encontro,Encontro de Juventude Nacional de Organização do 2º Turno,,,,,sim,https://docs.google.com/forms/d/e/1FAIpQLSeY6lQtmIuYnydJ_iKdzO_47oIlwHpGHZrwSHe6ggHBLrCtdQ/viewform,https://boralula.org/agenda/#/acao/1029177
-2026-10-12,19:00,21:50,outro,MOVIMENTO COM LULA,,,,,sim,https://chat.whatsapp.com/ErOsD1nfDSsHbnKnM9rmqi,https://boralula.org/agenda/#/acao/1032105
-2026-10-12,09:00,11:00,ato,Manifestação na Barra contra o Facismo,BA,Salvador,,Concentração no Cristo da Barra,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/314
-2026-10-12,10:00,12:00,cultural,Famílias pelo Futuro das Nossas Crianças,BA,Salvador,,Parque da Cidade,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000147
-2026-10-12,13:00,15:00,cultural,Samba da Democracia com a Banda Samba de Última Hora,BA,Salvador,Rio Vermelho,Sede do PT Bahia,,https://www.instagram.com/p/DeUt2Jvx21C/,https://boralula.org/agenda/#/acao/1000488
-2026-10-12,07:30,09:30,panfletagem,Adesivaço,CE,Aracati,,Semáforo do Mercado,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000144
-2026-10-12,16:30,18:30,caminhada,Porta a Porta,CE,Aracati,,Bairro Nossa Senhora de Lourdes,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000157
-2026-10-12,17:13,19:13,caminhada,Caminhada da Juventude Conjunto Ceará,CE,Fortaleza,,Banco do Brasil,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1007186
-2026-10-12,18:00,20:00,panfletagem,Ocupa Conjunto Ceará,CE,Fortaleza,,Gorilas Bar,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1027544
-2026-10-12,08:00,15:00,outro,Dia das Crianças do SISEMJUN no Clube dos Comerciários/SESC,CE,Juazeiro do Norte,Aeroporto,Clube dos Comerciários/SESC de Juazeiro do Norte,,https://www.instagram.com/p/DePKB6gkevl/,https://boralula.org/agenda/#/acao/1000481
-2026-10-12,17:00,19:00,ato,Bandeiraço / Agitação do 13,CE,Juazeiro do Norte,,Shopping,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000159
-2026-10-12,16:13,18:13,cultural,Encontro Cultural – Planaltina com Lula e Grass,DF,Brasília,,Feirinha da Independência - Prédio do antigo TRE,,https://www.instagram.com/p/DeVSUJkADWd/,https://boralula.org/agenda/#/acao/1007180
-2026-10-12,17:00,19:00,ato,Bandeiraço,DF,Brasília,,Balão EQS 105/106,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1025975
-2026-10-12,18:00,20:00,ato,Bandeiraço com o Boneco Gigante do Lula!,DF,Brasília,,Comitê de Rua 210/410 Norte,,https://www.instagram.com/p/DeVSUJkADWd/,https://boralula.org/agenda/#/acao/1007191
-2026-10-12,18:13,20:13,cultural,Encontro Cultural pela Democracia em Planaltina,DF,Brasília,,Feirinha da Independência,,https://www.instagram.com/p/DeSZFKZP8wr/,https://boralula.org/agenda/#/acao/1008026
-2026-10-12,19:00,21:00,outro,Gravaçao de clipe da banda Liga Tripa pela Democracia,DF,Brasília,,Beirute,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1026376
-2026-10-12,19:00,21:00,cultural,Gravação de Clipe: “Ou nós se une…” –,DF,Brasília,,Beirute,,https://www.instagram.com/p/DeVSUJkADWd/,https://boralula.org/agenda/#/acao/1007194
-2026-10-12,15:00,17:00,outro,Ato do Levante Popular da Juventude em frente à ALES,ES,Vitória,,Em frente à ALES,,https://www.instagram.com/p/DeVAEiwGBD7/,https://boralula.org/agenda/#/acao/1001666
-2026-10-12,16:00,18:00,encontro,Encontro Interreligioso Mulheres com Lula,MT,Cuiabá,,Igreja do Rosário,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/328
-2026-10-12,16:30,18:30,encontro,Pelos direito das crianças – Brincadeiras na Praça,PA,Belém,,Praça do SAEEB,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1030017
-2026-10-12,17:00,19:00,ato,Bandeiraço – Daent,PA,Belém,,Rua da Marinha com Augusto Montenegro,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1029167
-2026-10-12,17:00,19:00,ato,BANDEIRAÇO – DAENT,PA,Belém,,Av. Rodolfo Chermont com Avenida Tavares Bastos,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1029168
-2026-10-12,17:00,19:00,encontro,Plenária da Virada,PA,Belém,,Largo da Trindade,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000161
-2026-10-12,17:30,19:30,ato,Grande ato Político Lula 13,PA,Moju,,Concentração em Laranjituba,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1030873
-2026-10-12,08:00,10:00,caminhada,Grande caminhada do Vira-Voto em Mangabeira 6 e 7,PB,João Pessoa,,Praça da Família,,https://www.instagram.com/p/DeWYuZdhG2q/,https://boralula.org/agenda/#/acao/1004139
-2026-10-12,15:00,17:00,caminhada,Caminhada do Vira Voto em Mangabeira,PB,João Pessoa,Mangabeira,Mercadinho Central,,https://www.instagram.com/p/DeWblA7Bpz4/,https://boralula.org/agenda/#/acao/1004151
-2026-10-12,07:30,09:30,caminhada,Caminhada da Virada em Parnaíba,PI,Parnaíba,,Balão da Guarita,,https://www.instagram.com/p/DeVGBhGxqpz/,https://boralula.org/agenda/#/acao/1001654
-2026-10-12,15:30,17:30,caminhada,Carreata do Time do Lula em Parnaíba,PI,Parnaíba,,Balão do M.Show,,https://www.instagram.com/p/DeNZeW6Ru41/,https://boralula.org/agenda/#/acao/163
-2026-10-12,09:00,18:00,ato,Dia de Mobilização em Defesa de N. Sra. Aparecida como Padroeira do Brasil,PR,Curitiba,,Cidade de Curitiba,,https://www.instagram.com/p/DeM-uwUnNJ2/,https://boralula.org/agenda/#/acao/1000146
-2026-10-12,19:00,21:00,encontro,"Assembleia da categoria sobre a proposta de PLR do Sistema Petrobras (Cabiúnas, turno)",RJ,Macaé,,Cabiúnas,,https://www.instagram.com/p/DeSnTSOPT9Z/,https://boralula.org/agenda/#/acao/1000499
-2026-10-12,17:00,19:00,ato,Ato da Juventude Antifascismo em Nilópolis,RJ,Nilópolis,,Praça dos Estudantes,,https://www.instagram.com/p/DeP1R62paGD/,https://boralula.org/agenda/#/acao/1000497
-2026-10-12,17:00,19:00,ato,Ato pacífico da juventude em Nilópolis pela reeleição de Lula,RJ,Nilópolis,Centro,Praça Ver. Orlando Hungria (Praça dos estudantes),,https://www.instagram.com/p/DePGedNRrWA/,https://boralula.org/agenda/#/acao/1000498
-2026-10-12,17:00,19:00,ato,Juventude de Nilópolis nas ruas com Lula,RJ,Nilópolis,,Local não informado na legenda,,https://www.instagram.com/p/DeP1R62paGD/,https://boralula.org/agenda/#/acao/2330
-2026-10-12,11:00,13:00,caminhada,Marcha pelos Direitos dos Trabalhadores: Cantareira até Praça Arariboia,RJ,Niterói,,Cantareira,,https://www.instagram.com/p/DeMjWKOvTjI/,https://boralula.org/agenda/#/acao/290
-2026-10-12,16:00,18:00,panfletagem,Militância com o Lula,RJ,Paraty,,Esquina em frente à rodoviária,,https://www.instagram.com/p/DeSuyYOTf5z/,https://boralula.org/agenda/#/acao/1000156
-2026-10-12,09:00,18:00,ato,Ato de sambistas em defesa de Lula na Lapa,RJ,Rio de Janeiro,Lapa,Lapa,,https://t.me/midianinja/11297,https://boralula.org/agenda/#/acao/379
-2026-10-12,11:00,13:00,ato,Ato Brasil pela Democracia no Posto 5 de Copacabana,RJ,Rio de Janeiro,Copacabana,Posto 5 da praia de Copacabana,,https://www.instagram.com/p/DeUVvXtpvSF/,https://boralula.org/agenda/#/acao/1000482
-2026-10-12,11:00,13:00,ato,Batuque pela Democracia: concentração e cortejo até a Praça Mauá,RJ,Rio de Janeiro,,Sede do Movimento das Mulheres Sambistas,,https://www.instagram.com/p/DeSJyd6FfFJ/,https://boralula.org/agenda/#/acao/1007993
-2026-10-12,11:00,13:00,ato,Passeata pela democracia saindo do Posto 5 de Copacabana,RJ,Rio de Janeiro,Copacabana,Posto 5 de Copacabana,,https://www.instagram.com/p/DeVBFGghHG9/,https://boralula.org/agenda/#/acao/1003507
-2026-10-12,11:30,13:30,ato,"Passeata pela orla de Copacabana, do Posto 5 à Praça do Lido",RJ,Rio de Janeiro,Copacabana,Posto 5,,https://www.instagram.com/p/DeUsZJthaVf/,https://boralula.org/agenda/#/acao/1000483
-2026-10-12,12:00,14:00,ato,Ato em apoio à candidatura de Lula no segundo turno,RJ,Rio de Janeiro,Copacabana,Praia de Copacabana,,https://www.instagram.com/p/DeMrv08gBtD/,https://boralula.org/agenda/#/acao/1000485
-2026-10-12,12:00,14:00,ato,Feriado é na rua: ato em Copacabana e samba nos Arcos da Lapa,RJ,Rio de Janeiro,Lapa,Arcos da Lapa,,https://www.instagram.com/p/DeSGKDRps_S/,https://boralula.org/agenda/#/acao/1000484
-2026-10-12,12:00,14:00,ato,Manifestação em prol da Democracia,RJ,Rio de Janeiro,,Posto 5,,https://www.instagram.com/p/DeNvrlpRTxX/,https://boralula.org/agenda/#/acao/1000152
-2026-10-12,12:00,14:00,ato,"Torcidas Antfacistas: torcidas, bateriais e atléticas unidas novamente pela democracia!",RJ,Rio de Janeiro,,Copacabana (posto 5),,https://www.instagram.com/p/DeSm1JuI1ld/,https://boralula.org/agenda/#/acao/1000151
-2026-10-12,15:00,17:00,ato,Ato do carnaval em apoio ao Lula nos Arcos da Lapa,RJ,Rio de Janeiro,Lapa,Arcos da Lapa,,https://www.instagram.com/p/DeSsWx2CUMB/,https://boralula.org/agenda/#/acao/1006433
-2026-10-12,15:00,17:00,ato,Ato do samba em defesa dos direitos do povo nos Arcos da Lapa,RJ,Rio de Janeiro,Lapa,Arcos da Lapa,,https://www.instagram.com/p/DeQM0q0px88/,https://boralula.org/agenda/#/acao/1000496
-2026-10-12,15:00,17:00,ato,Ato dos sambistas em defesa da democracia: o samba não se cala,RJ,Rio de Janeiro,Lapa,Arcos da Lapa,,https://www.instagram.com/p/DeSpARWCcLz/,https://boralula.org/agenda/#/acao/1000491
-2026-10-12,15:00,17:00,ato,Ato em defesa da democracia do samba nos Arcos da Lapa,RJ,Rio de Janeiro,,Arcos da Lapa,,https://www.instagram.com/p/DeU3b2xiGYp/,https://boralula.org/agenda/#/acao/1004737
-2026-10-12,15:00,17:00,ato,Ato em defesa do carnaval de rua em frente aos Arcos da Lapa,RJ,Rio de Janeiro,Lapa,Arcos da Lapa,,https://www.instagram.com/p/DeSV7zpxlt6/,https://boralula.org/agenda/#/acao/1000494
-2026-10-12,15:00,17:00,ato,Ato em defesa dos direitos: O samba não se cala,RJ,Rio de Janeiro,,Arcos da Lapa,,https://www.instagram.com/p/DeQekA9DgkH/,https://boralula.org/agenda/#/acao/1005874
-2026-10-12,15:00,17:00,ato,Ato 'O samba não se cala - a luta é na rua' na Lapa,RJ,Rio de Janeiro,Lapa,Arcos da Lapa,,https://www.instagram.com/p/DeQSv1sloxG/,https://boralula.org/agenda/#/acao/1005875
-2026-10-12,15:00,17:00,ato,"Ato ""O samba não se cala"" em frente aos Arcos da Lapa",RJ,Rio de Janeiro,Lapa,Arcos da Lapa,,https://www.instagram.com/p/DePqjmIIIn2/,https://boralula.org/agenda/#/acao/1002891
-2026-10-12,15:00,17:00,ato,"Ato ""O samba não se cala"" em frente aos Arcos da Lapa",RJ,Rio de Janeiro,Lapa,Arcos da Lapa,,https://www.instagram.com/p/DeSdOWLS6dB/,https://boralula.org/agenda/#/acao/1006426
-2026-10-12,15:00,17:00,ato,Ato Todes pela Democracia com a Frente LGBTIA+ nos Arcos da Lapa,RJ,Rio de Janeiro,Lapa,Arcos da Lapa,,https://www.instagram.com/p/DeU3tLVR3KG/,https://boralula.org/agenda/#/acao/1000495
-2026-10-12,15:00,17:00,ato,"Baterias Mangueira, Maricá e Império Serrano: O samba não se cala",RJ,Rio de Janeiro,Lapa,Arcos da Lapa,,https://www.instagram.com/p/DeQZtQfIJpP/,https://boralula.org/agenda/#/acao/1004739
-2026-10-12,15:00,17:00,ato,O Samba Não se Cala: ato da Orquestra de Rua do Cordão do Boitatá,RJ,Rio de Janeiro,Lapa,Arcos da Lapa,,https://www.instagram.com/p/DeSjQalmc7a/,https://boralula.org/agenda/#/acao/1004156
-2026-10-12,15:00,17:00,ato,O Samba não se cala: ato em defesa de direitos nos Arcos da Lapa,RJ,Rio de Janeiro,Lapa,Arcos da Lapa,,https://www.instagram.com/p/DePUPMqoNvc/,https://boralula.org/agenda/#/acao/181
-2026-10-12,15:00,17:00,ato,O Samba Não Se Cala: ato no Arcos da Lapa,RJ,Rio de Janeiro,Lapa,Arcos da Lapa,,https://www.instagram.com/p/DeUxmPsv3Fw/,https://boralula.org/agenda/#/acao/1003526
-2026-10-12,15:00,17:00,ato,O Samba Não Se Cala: ato nos Arcos da Lapa,RJ,Rio de Janeiro,Lapa,Arcos da Lapa,,https://www.instagram.com/p/DePw0noD1d6/,https://boralula.org/agenda/#/acao/1004744
-2026-10-12,15:00,17:00,cultural,"SAMBA NÃO SE CALA – BATERIAS MARICÁ, MANGUEIRA E IMPÉRIO SERRANO",RJ,Rio de Janeiro,,ARCOS DA LAPA,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1018022
-2026-10-12,15:00,17:00,ato,Samba pela democracia nos Arcos da Lapa,RJ,Rio de Janeiro,,Arcos da Lapa,,https://www.instagram.com/p/DeSgmEJlXRw/,https://boralula.org/agenda/#/acao/1002893
-2026-10-12,18:13,20:13,caminhada,Caminhada em Martins com Cadu e Lula,RN,Martins,,Sítio Canto (próximo à capela),,https://www.instagram.com/p/DeUBvJLlkC5/,https://boralula.org/agenda/#/acao/1000167
-2026-10-12,17:00,19:00,ato,Parnamirim com Lula! Reunião e Mobilização!,RN,Parnamirim,,Palco do caminhódromo da Cohabinal,,https://www.instagram.com/p/DeS7I1Cv3RT/,https://boralula.org/agenda/#/acao/1000160
-2026-10-12,13:30,15:30,ato,Ato estudantil em Lajeado com marcha até a Rua Júlio de Castilhos,RS,Lajeado,,Parque dos Dicks,,https://www.instagram.com/p/DeSSrdXods3/,https://boralula.org/agenda/#/acao/1008000
-2026-10-12,13:00,15:00,outro,Pinte o 13: atividade com militantes no Parque da Baronesa,RS,Pelotas,,Parque da Baronesa,,https://www.instagram.com/p/DeUd8bXFb5l/,https://boralula.org/agenda/#/acao/1000487
-2026-10-12,14:00,16:00,ato,Pinte o 13: atividade com militantes no Parque da Baronesa,RS,Pelotas,,Parque da Baronesa,,https://www.instagram.com/p/DeUfRCkFkIM/,https://boralula.org/agenda/#/acao/1000489
-2026-10-12,10:00,12:00,ato,Bandeiraço e Adesivaço,RS,Pinhal,,Praça do Cidadão,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000149
-2026-10-12,15:00,17:00,encontro,Produção coletiva de cartazes para o ato,SC,Joinville,,Comitê do Centro,,https://www.instagram.com/p/DeUKsw3RujR/,https://boralula.org/agenda/#/acao/1002898
-2026-10-12,15:00,17:00,outro,Produção coletiva de cartazes para o ato de terça-feira,SC,Joinville,,Comitê do Centro,,https://www.instagram.com/p/DeUnQK6oVSK/,https://boralula.org/agenda/#/acao/1000493
-2026-10-12,14:00,16:00,encontro,Plenária de organização em São José,SC,São José,,Beira Mar São José,,https://www.instagram.com/p/DePN2XhkQC7/,https://boralula.org/agenda/#/acao/1000490
-2026-10-12,18:00,20:00,cultural,Sarau Simão Dias com Lula,SE,Simão Dias,,Coreto da Matriz,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000166
-2026-10-12,07:00,09:00,caminhada,Caminhada em Aparecida pela defesa do futuro digno e da democracia,SP,Aparecida,,Praça Kennedy,,https://www.instagram.com/p/DeVESvEtVf3/,https://boralula.org/agenda/#/acao/1000480
-2026-10-12,06:00,08:00,outro,Bora virar voto!,SP,Franca,,Terminal,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000143
-2026-10-12,17:30,19:30,outro,Bora virar voto!,SP,Franca,,Cesar Piraja - Aeroporto,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000162
-2026-10-12,17:30,19:30,outro,Bora virar voto!,SP,Franca,,Terminal/Centro,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000163
-2026-10-12,10:00,12:00,ato,Mobilização Vira Voto,SP,Osasco,,Estação e calçadão de Osasco,,https://www.instagram.com/p/DeTB7IVsFU8/,https://boralula.org/agenda/#/acao/1000148
-2026-10-12,13:00,15:00,encontro,Encontro da Juventude com o Lula na sede do PT Osasco,SP,Osasco,Centro,Sede do PT Osasco,,https://www.instagram.com/p/DeVCv76JOia/,https://boralula.org/agenda/#/acao/1000486
-2026-10-12,13:00,15:00,encontro,Mobilização Vira Voto – Reunião da Juventude,SP,Osasco,,"Rua Gal. Bittencourt, 501",,https://www.instagram.com/p/DeTB7IVsFU8/,https://boralula.org/agenda/#/acao/1000153
-2026-10-12,18:00,20:00,panfletagem,Panfletagem no Terminal de ônibus (Santos),SP,Santos,,Terminal de ônibus,,https://www.instagram.com/pcdob_santos65/p/DePqlB6hlB9/,https://boralula.org/agenda/#/acao/2388
-2026-10-12,11:00,13:00,ato,Ato em apoio à candidatura de Lula no Vão do MASP,SP,São Paulo,,Vão do MASP,,https://www.instagram.com/p/DeV_P4huSrq/,https://boralula.org/agenda/#/acao/1004726
-2026-10-12,11:00,13:00,ato,"Ato no Vão do MASP, Avenida Paulista, em apoio à candidatura de Lula",SP,São Paulo,,Vão do MASP,,https://www.instagram.com/p/DeWNa0xBXKs/,https://boralula.org/agenda/#/acao/1004727
-2026-10-12,18:00,20:00,encontro,Manifestação contra Flávio Bolsonaro,SP,São Paulo,,Estação Capão Redondo,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/82
-2026-10-12,16:00,18:00,caminhada,Caminhada da juventude até a Feira do Bosque,TO,Palmas,,Parque Cesamar,,https://www.instagram.com/p/DeU6H6yi9Bk/,https://boralula.org/agenda/#/acao/1002279
 2026-10-13,13:00,15:00,outro,Livezão do Lula 13 (live da virada),,,,,sim,https://www.facebook.com/events/1829164754945758/,https://boralula.org/agenda/#/acao/380
 2026-10-13,14:00,16:00,encontro,COEBE extraordinário: luta contra o fascismo na UFCG e em defesa da democracia,,,,,sim,https://www.instagram.com/p/DeVaR91xPz2/,https://boralula.org/agenda/#/acao/1035564
 2026-10-13,16:30,18:30,encontro,Assembleia Geral virtual das trabalhadoras e trabalhadores em educação pública do Pará: Eleições 2026,,,,,sim,https://www.instagram.com/p/DePlPmBtkNL/,https://boralula.org/agenda/#/acao/1037347
@@ -100,6 +15,7 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-13,18:00,20:00,caminhada,Caminhada Bora Lula com a Juventude de Arapiraca,AL,Arapiraca,,"UNEAL, Campus I",,https://www.instagram.com/p/DeZFc4hirue/,https://boralula.org/agenda/#/acao/1036876
 2026-10-13,08:00,21:00,outro,Votação para a nova gestão do Diretório Acadêmico de Letras (DALET),AL,Maceió,,Bloco de Letras Libras (matutino) e BSA1 (vespertino e noturno),,https://www.instagram.com/p/DeaBwFpAfTS/,https://boralula.org/agenda/#/acao/1036827
 2026-10-13,09:00,11:00,panfletagem,Mobilização Aparecida – Panfletagem e Vira Voto,AM,Manaus,,Feira da Aparecida,,https://radar-esquerdista.vercel.app/,https://boralula.org/agenda/#/acao/1000171
+2026-10-13,07:30,09:30,panfletagem,Panfletagem e diálogo com a população na Feira do Buritizal,AP,Macapá,,Feira do Buritizal,,https://www.instagram.com/p/DeZ1y9Rzd5M/,https://boralula.org/agenda/#/acao/1043100
 2026-10-13,19:00,21:00,encontro,Agenda de assembleias gerais da UNEB,BA,Barreiras,,Campus IX - Auditório UNEB IX,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000216
 2026-10-13,18:00,20:00,encontro,Agenda de assembleias gerais da UNEB,BA,Brumado,,Campus XX - Auditório da UNEB,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000207
 2026-10-13,09:00,11:00,ato,Manifestação no Portão de Entrada da UFRB,BA,Cruz das Almas,,Campus Cruz das Almas,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1034886
@@ -107,12 +23,15 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-13,16:00,18:00,ato,Ato contra o bolsonarismo em defesa das liberdades democráticas,BA,Feira de Santana,,Colégio Gastão,,https://www.instagram.com/p/DeIwX9bsMk3/,https://boralula.org/agenda/#/acao/81
 2026-10-13,15:00,17:00,ato,Ato de rua em apoio a Lula em Paulo Afonso,BA,Paulo Afonso,,Comitê de Lula,,https://www.instagram.com/p/DeZgjDevacS/,https://boralula.org/agenda/#/acao/1037327
 2026-10-13,08:00,10:00,ato,"Ato em Defesa dos Bancos Públicos, Estatais e do Serviço Público",BA,Salvador,,Torre Pituba da Petrobras,,https://www.instagram.com/p/DeSMBYFCW--/,https://boralula.org/agenda/#/acao/1000169
+2026-10-13,10:00,12:00,encontro,Assembleia estudantil em defesa da educação e da democracia,BA,Salvador,,Pátio do Colégio Central da Bahia,,https://www.instagram.com/p/DeZU-Q7O-xw/,https://boralula.org/agenda/#/acao/1042552
 2026-10-13,10:40,12:40,encontro,Assembleia Geral da FACOM,BA,Salvador,,Auditório da FACOM,,https://www.instagram.com/cafacom/p/DeQUXJjMSv_/,https://boralula.org/agenda/#/acao/1000172
 2026-10-13,14:00,16:00,encontro,Aula pública Voz do Brasil: liberdade e cidadania,BA,Salvador,,Praça de Cajazeiras 6,,https://www.instagram.com/p/DeUhS_aRJSV/,https://boralula.org/agenda/#/acao/1000503
 2026-10-13,14:00,16:00,encontro,Aula pública Voz do Brasil: liberdade e cidadania,BA,Salvador,,Praça de Cajazeiras 6,,https://www.instagram.com/p/DeR-H04xT4Z/,https://boralula.org/agenda/#/acao/1004761
 2026-10-13,14:00,16:00,encontro,Aula pública Voz do Brasil: Liberdade e cidadania,BA,Salvador,Cajazeiras VI,Praça de Cajazeiras 6,,https://www.instagram.com/p/DeXJhhRRcf1/,https://boralula.org/agenda/#/acao/1035160
 2026-10-13,14:00,16:00,encontro,"Aula pública Voz do Brasil: Liberdade e Cidadania, com Yara Damasceno",BA,Salvador,Cajazeiras VI,Praça de Cajazeiras 6,,https://www.instagram.com/p/DeZuMUcxhav/,https://boralula.org/agenda/#/acao/1036839
 2026-10-13,14:00,16:00,cultural,Aulão “Voz do Brasil: Liberdade e Cidadania”,BA,Salvador,,Praça de Cajazeiras 6,,https://www.instagram.com/p/DeSMBYFCW--/,https://boralula.org/agenda/#/acao/1000180
+2026-10-13,19:00,21:00,encontro,Assembleia Geral dos Estudantes,BA,Salvador,,Estacionamento do CTN,,https://www.instagram.com/p/DeacxrOR4zd/,https://boralula.org/agenda/#/acao/1042666
+2026-10-13,19:00,21:00,ato,Ato Democrático Lula nas Ruas,BA,Senhor do Bonfim,,Comitê da Majoritária,,https://www.instagram.com/p/DeWiZwuNWg2/,https://boralula.org/agenda/#/acao/1041590
 2026-10-13,18:00,20:00,outro,Movimento Bolsonaro Nunca Mais,CE,Aracati,,Bairro Nossa Senhora de Fátima,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000206
 2026-10-13,19:00,21:00,caminhada,Grande Caminhada em Cascavel,CE,Cascavel,,Da Praça de São Francisco até o NAEC,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000214
 2026-10-13,19:00,21:00,caminhada,Grande Caminhada em Cascavel,CE,Cascavel,,Praça de São Francisco,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000215
@@ -122,6 +41,7 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-13,18:00,20:00,encontro,Plenária Aberta de Mobilização da Campanha Lula Presidente,CE,Fortaleza,,Benfica,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000204
 2026-10-13,18:13,20:13,ato,Micareta Bora Lula,CE,Iguatu,,Praça da Bandeira,,https://www.instagram.com/p/DeXxsc3FtVY/,https://boralula.org/agenda/#/acao/1036909
 2026-10-13,18:13,20:13,ato,Micareta Bora Lula - ato unificado em Iguatu,CE,Iguatu,,Praça da Bandeira,,https://www.instagram.com/p/DeXhBeZSK7Q/,https://boralula.org/agenda/#/acao/1036906
+2026-10-13,18:13,20:13,caminhada,Micareta Bora Lula: caminhada em Iguatu pelo novo percurso,CE,Iguatu,,Praça da Bandeira,,https://www.instagram.com/p/DeZ3b_fk2GL/,https://boralula.org/agenda/#/acao/1037913
 2026-10-13,18:13,20:13,ato,Micareta Bora Lula: concentração na Praça da Bandeira,CE,Iguatu,,Praça da Bandeira,,https://www.instagram.com/p/DePm8uLT2oC/,https://boralula.org/agenda/#/acao/1000212
 2026-10-13,18:13,20:13,ato,Micareta Bora Lula em Iguatu,CE,Iguatu,,Praça da Bandeira,,https://www.instagram.com/p/DeVGkBVloKa/,https://boralula.org/agenda/#/acao/1001711
 2026-10-13,18:13,20:13,ato,Micareta Bora Lula em Iguatu,CE,Iguatu,,Praça da Bandeira,,https://www.instagram.com/p/DeZv1bVyFiV/,https://boralula.org/agenda/#/acao/1036905
@@ -132,6 +52,7 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-13,18:13,20:13,caminhada,"Marcha Juventude e Educação, saindo da Fábrica dos Carneiros",CE,Quixeramobim,,Fábrica dos Carneiros,,https://www.instagram.com/p/DeXsnAfsEmj/,https://boralula.org/agenda/#/acao/1036911
 2026-10-13,07:30,09:30,ato,Ato da Frente Pró-Lula em Sobral,CE,Sobral,,Praça da Coluna da Hora,,https://www.instagram.com/p/DeW7k-YMR-M/,https://boralula.org/agenda/#/acao/1036825
 2026-10-13,08:13,10:13,ato,Ato Bora Lula,CE,Sobral,,Praça da Coluna da Hora,,https://www.instagram.com/p/DeZUV9RuqfT/,https://boralula.org/agenda/#/acao/1027553
+2026-10-13,08:13,10:13,caminhada,Caminhada do ato unificado da Frente Pró-Lula da Região Norte e da Ibiapaba,CE,Sobral,,Coluna da Hora,,https://www.instagram.com/p/DeZwuuOpLur/,https://boralula.org/agenda/#/acao/1037816
 2026-10-13,06:00,08:30,panfletagem,Panfletaço em Pontos de Ônibus – Paranoá,DF,Brasília,,Pontos de Ônibus pela Cidade,,https://www.instagram.com/p/DeYBL8EgMq0/,https://boralula.org/agenda/#/acao/1028344
 2026-10-13,07:00,09:00,panfletagem,Panfletagem Fármacia de Alto Custo,DF,Brasília,,Metrô 102/103 Sul,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1026378
 2026-10-13,07:30,09:30,panfletagem,Diálogo nas Escolas de Sobradinho,DF,Brasília,,Sobradinho - Escolas de Sobradinho,,https://www.instagram.com/p/DeYBL8EgMq0/,https://boralula.org/agenda/#/acao/1028348
@@ -164,6 +85,7 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-13,16:00,18:00,ato,Fora Celina e Bolsonaro Nunca Mais,DF,Brasília,,Museu da República,,https://www.instagram.com/p/DeYaYSARvKP/,https://boralula.org/agenda/#/acao/1029659
 2026-10-13,16:00,18:00,ato,Juventude Convoca – Ato Bolsonaro Nunca Mais – Fim da Escala 6×1,DF,Brasília,,Museu da República,,https://www.instagram.com/p/DeYBL8EgMq0/,https://boralula.org/agenda/#/acao/1028389
 2026-10-13,16:00,18:00,ato,Nem Pai e Nem Filho,DF,Brasília,,Museu da República,,https://www.instagram.com/p/DeYBL8EgMq0/,https://boralula.org/agenda/#/acao/1028390
+2026-10-13,17:00,19:00,ato,Ato Bolsonaro Nunca Mais pelo fim da escala 6x1,DF,Brasília,,Museu Nacional,,https://www.instagram.com/p/DeaX6sqNG_c/,https://boralula.org/agenda/#/acao/1042061
 2026-10-13,17:00,19:00,ato,Ato contra a Extrema Direita,DF,Brasília,,Museu da República,,https://www.instagram.com/p/DeNa7Pnh9rZ/,https://boralula.org/agenda/#/acao/1000198
 2026-10-13,17:00,19:00,ato,Bandeiraço,DF,Brasília,,Balão EQS 105/106,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1026410
 2026-10-13,17:00,18:30,ato,Bandeiraço Leandro e Lula no Torto,DF,Brasília,,Lago Norte - Ponto de Ônibus da EPIA Granja do Torto,,https://www.instagram.com/p/DeYBL8EgMq0/,https://boralula.org/agenda/#/acao/1028398
@@ -183,20 +105,24 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-13,07:30,09:30,caminhada,Arrastão do Lula em Açailândia,MA,Açailândia,Centro,Centro,,https://www.instagram.com/p/DePqcrqiZgl/,https://boralula.org/agenda/#/acao/2435
 2026-10-13,15:30,17:30,ato,Manifestação em defesa da educação em Caxias,MA,Caxias,,Rua das Sombrinhas,,https://www.instagram.com/p/DeZdVv0ALJ3/,https://boralula.org/agenda/#/acao/1037333
 2026-10-13,16:00,18:00,caminhada,Caminhada do Exército do Lula em Imperatriz,MA,Imperatriz,,UEMASUL,,https://www.instagram.com/p/DeZnlosRtQ6/,https://boralula.org/agenda/#/acao/1036408
+2026-10-13,16:00,18:00,caminhada,Caminhada do Exército do Lula em Imperatriz,MA,Imperatriz,,UEMASUL,,https://www.instagram.com/p/DeZv52qRllY/,https://boralula.org/agenda/#/acao/1040986
 2026-10-13,18:13,20:13,caminhada,Arrastão do Lula na Cidade Operária,MA,São Luís,,Viva da C.O.,,https://www.instagram.com/p/DeUalHMqrMY/,https://boralula.org/agenda/#/acao/1000534
 2026-10-13,11:13,13:13,ato,Inauguração do Comitê Popular Central,MG,Belo Horizonte,Floresta,"Av. Francisco Sales, 80",,https://www.instagram.com/p/DeZagOIgd0-/,https://boralula.org/agenda/#/acao/1036388
 2026-10-13,17:00,19:00,caminhada,Caminhada pela Vitória,MG,Divinópolis,,Praça da São Paulo,,https://www.instagram.com/p/DeURlTLMnpO/,https://boralula.org/agenda/#/acao/1000200
 2026-10-13,17:30,19:30,ato,"Ato político em defesa da educação, da pesquisa e da soberania",MG,Itajubá,,Portaria da Universidade Federal de Itajubá (UNIFEI),,https://www.instagram.com/p/DeU-JBXmkfw/,https://boralula.org/agenda/#/acao/1000518
+2026-10-13,16:00,18:00,ato,Ato pela educação e fim da escala 6x1,MS,Campo Grande,,Monumento Paliteiro da UFMS,,https://www.instagram.com/p/DeZ1B62IGv1/,https://boralula.org/agenda/#/acao/1037867
 2026-10-13,17:00,19:00,ato,Levante dos Estudantes pela Democracia,MS,Campo Grande,,Concentração às 16:00 horas no Portão 2 da UFMS - Saída Bloco VI,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000209
 2026-10-13,18:00,20:00,caminhada,Passeata Fora Extrema Direita,MS,Campo Grande,,Concentração na Zona Oeste em frente ao West Shopping (primeira entrada),,https://www.instagram.com/p/DeM3u16RH4x/,https://boralula.org/agenda/#/acao/166
 2026-10-13,17:00,19:00,panfletagem,Bandeiraço e panfletagem na Arena do Porto do Baé,MT,Barra do Garças,,Arena do Porto do Baé,,https://www.instagram.com/p/DeUG8ozRt9b/,https://boralula.org/agenda/#/acao/1034392
 2026-10-13,15:00,17:00,ato,Ato Bora Lula,PA,Ananindeua,,UFBA - Campus Ananindeua - ICUI,,https://www.instagram.com/p/DeQH_SLN84w/,https://boralula.org/agenda/#/acao/1000181
+2026-10-13,15:00,17:00,ato,Bora Lula Ananindeua,PA,Ananindeua,,UFPA Campus Ananindeua,,https://www.instagram.com/p/DealMHbluNo/,https://boralula.org/agenda/#/acao/1042571
 2026-10-13,17:00,19:00,ato,ATO BORA VIRAR LULA,PA,Aurora do Pará,,Aurora do Pará,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000197
 2026-10-13,19:00,21:00,ato,Ato Político em Defesa da Democracia,PA,Barcarena,,SINTICOMBA,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1029266
 2026-10-13,09:00,11:00,encontro,Assembleia Geral Extraordinária da Adufpa em defesa do Brasil,PA,Belém,,Hall da Reitoria,,https://www.instagram.com/p/DeSMdKwJpC6/,https://boralula.org/agenda/#/acao/1034350
 2026-10-13,14:30,16:30,outro,Oficina de stencil: molde para grafitar,PA,Belém,,Porto Futuro,,https://www.instagram.com/p/DeXFt0RgK46/,https://boralula.org/agenda/#/acao/1035162
 2026-10-13,15:00,17:00,ato,Ato Bora Lula,PA,Belém,,UFPA Campus Ananindeua - ICUI,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1032148
 2026-10-13,16:00,18:00,ato,"Ato Bolsonaro Nunca Mais no Porto Futuro, em Belém",PA,Belém,,Porto Futuro,,https://www.instagram.com/p/DeZnydrIZe_/,https://boralula.org/agenda/#/acao/1037337
+2026-10-13,16:00,18:00,ato,Ato pelo segundo turno com debate sobre educação e saúde no Porto Futuro,PA,Belém,,Estação das Docas (Porto Futuro),,https://www.instagram.com/p/DeaYZmAMd4Z/,https://boralula.org/agenda/#/acao/1042579
 2026-10-13,16:00,18:00,panfletagem,Panfletagem com Diálogo,PA,Belém,,Estação das Docas,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1030082
 2026-10-13,16:00,18:00,panfletagem,Panfletagem com diálogo para o Lula em Belém,PA,Belém,,Estação das Docas,,https://www.instagram.com/p/DeVAlE7ANY0/,https://boralula.org/agenda/#/acao/1035574
 2026-10-13,16:00,18:00,ato,Povo na Rua: ato em defesa da democracia em Belém,PA,Belém,,Doca de Souza Franco (Porto Futuro),,https://www.instagram.com/p/DeTzmIcqeIk/,https://boralula.org/agenda/#/acao/1000189
@@ -220,6 +146,7 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-13,07:13,09:13,ato,Manifestação estudantil pela democracia em Sousa,PB,Sousa,,"UFCG – Campus do Centro (CCJS, Unidade I)",,https://www.instagram.com/p/DeZ_gXZzWUZ/,https://boralula.org/agenda/#/acao/1036824
 2026-10-13,07:13,09:13,ato,Mobilização estudantil pela educação pública em Sousa,PB,Sousa,,UFCG - Unidade I,,https://www.instagram.com/p/DeWxuBsxL81/,https://boralula.org/agenda/#/acao/1036823
 2026-10-13,19:00,21:00,ato,Arrastão Pró-Lula,PE,Afogados da Ingazeira,,Avenida Rio Branco,,https://www.instagram.com/p/DeRrct8lbzp/,https://boralula.org/agenda/#/acao/1000218
+2026-10-13,10:00,19:00,outro,Sede aberta para retirada de materiais de mobilização em apoio ao presidente Lula,PE,Olinda,Carmo,Sede do PT Olinda,,https://www.instagram.com/p/DeaVc1uP2Gr/,https://boralula.org/agenda/#/acao/1042006
 2026-10-13,12:00,14:00,encontro,Plenária,PE,Recife,,IFPE - Campus Recife,,https://www.instagram.com/p/DePeocbkbRR/,https://boralula.org/agenda/#/acao/230
 2026-10-13,16:13,18:13,panfletagem,"Grande ação conjunta UPE, ApD e Coletivo 13 no Parque das Graças",PE,Recife,Graças,Parque das Graças,,https://www.instagram.com/p/DeQGn-xBWF-/,https://boralula.org/agenda/#/acao/2468
 2026-10-13,16:13,18:13,ato,Mobilização artística pela reeleição de Lula,PE,Recife,Recife,Parque das Graças,,https://www.instagram.com/p/DeSVWQNN4oo/,https://boralula.org/agenda/#/acao/1000511
@@ -229,7 +156,10 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-13,16:00,18:00,ato,Ato Unificado – Piauí é Lula!,PI,Teresina,,Estacionamento do Parque da Cidadania,,https://www.instagram.com/p/DeW4e1dh-ra/,https://boralula.org/agenda/#/acao/1027574
 2026-10-13,17:00,19:00,ato,"Ato em Teresina pela democracia, educação, saúde e transporte",PI,Teresina,,Parque da Cidadania,,https://www.instagram.com/p/DeXW1I3tz4B/,https://boralula.org/agenda/#/acao/1036864
 2026-10-13,17:00,19:00,ato,Ato unificado pela Democracia do Brasil,PI,Teresina,,Frei Serafim,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000194
+2026-10-13,16:00,18:00,panfletagem,Panfletagem na Praça Rui Barbosa em apoio ao presidente Lula,PR,Curitiba,,Praça Rui Barbosa,,https://www.instagram.com/p/DeaoaZRxpMJ/,https://boralula.org/agenda/#/acao/1042035
 2026-10-13,19:00,21:00,ato,Ato relâmpago contra o jantar de prefeitos bolsonaristas em Curitiba,PR,Curitiba,Santa Felicidade,Restaurante Madalosso,,https://www.instagram.com/p/DeZecFDgktZ/,https://boralula.org/agenda/#/acao/1037418
+2026-10-13,19:00,21:00,encontro,Plenária Popular e Partidária de Curitiba e Região Metropolitana,PR,Curitiba,Rebouças,APP Sindicato,,https://www.instagram.com/p/DeZ1aIzRlhQ/,https://boralula.org/agenda/#/acao/1037922
+2026-10-13,17:30,19:30,ato,Ato nacional em defesa da educação pública,PR,Maringá,,Estacionamento BCE da UEM,,https://www.instagram.com/p/DeYGtufxx3g/,https://boralula.org/agenda/#/acao/1045935
 2026-10-13,17:00,19:00,caminhada,"Caminhada Cabo Frio a favor da democracia, saindo da UERJ",RJ,Cabo Frio,,UERJ Cabo Frio,,https://www.instagram.com/p/DeZb0AwxbXR/,https://boralula.org/agenda/#/acao/1037350
 2026-10-13,17:00,19:00,caminhada,Caminhada em defesa da democracia de Cabo Frio até a Praça Porto Rocha,RJ,Cabo Frio,,UERJ,,https://www.instagram.com/p/DeUUBXAvDL9/,https://boralula.org/agenda/#/acao/1000515
 2026-10-13,13:00,15:00,encontro,Assembleia da categoria nas unidades Imboassica e Imbetiba,RJ,Macaé,,Imboassica e Imbetiba,,https://www.instagram.com/p/DeMTphquzQY/,https://boralula.org/agenda/#/acao/1000500
@@ -238,6 +168,7 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-13,16:00,18:00,panfletagem,Militância com o Lula,RJ,Paraty,,Esquina em frente à rodoviária,,https://www.instagram.com/p/DeSuyYOTf5z/,https://boralula.org/agenda/#/acao/1000188
 2026-10-13,13:00,15:00,ato,Manifestação de Resistência,RJ,Resende,,Take Rock Bar,,https://www.instagram.com/p/DeR0FaJuI8y/,https://boralula.org/agenda/#/acao/1000178
 2026-10-13,17:00,19:00,caminhada,Caminhada Bora Lula em Rio das Ostras,RJ,Rio das Ostras,,Praça José Pereira Câmara (Praça do Poço),,https://www.instagram.com/p/DePHUnQRaeH/,https://boralula.org/agenda/#/acao/293
+2026-10-13,17:00,19:00,caminhada,Caminhada Bora Lula em Rio das Ostras,RJ,Rio das Ostras,,Praça Jose Pereira Câmara (Praça do Poço),,https://www.instagram.com/p/DeZueceCfks/,https://boralula.org/agenda/#/acao/1037863
 2026-10-13,16:00,18:00,ato,Agenda de Mobilização na Leopoldina,RJ,Rio de Janeiro,,Calçadão da Penha,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1018060
 2026-10-13,16:30,18:30,encontro,Educação com Lula – Reunião organizativa do ato do dia 15/10,RJ,Rio de Janeiro,,SEPE,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1034528
 2026-10-13,16:30,18:30,encontro,Plenária dos estudantes da UFRJ com Lula,RJ,Rio de Janeiro,,Gramado da Letras,,https://www.instagram.com/p/DeInEuFx2WS/,https://boralula.org/agenda/#/acao/4
@@ -249,13 +180,17 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-13,18:00,20:00,encontro,Plenária Petroleiros com Lula,RJ,Rio de Janeiro,,Comitê dos Comitês,,https://www.instagram.com/p/DeScdG-ADFn/,https://boralula.org/agenda/#/acao/1034385
 2026-10-13,19:00,21:00,encontro,Plenária da Federação PSOL-Rede,RJ,Rio de Janeiro,,Casa Marielle Franco,,https://www.instagram.com/p/DeRobJTqXJe/,https://boralula.org/agenda/#/acao/1000537
 2026-10-13,17:13,19:13,ato,Ato dos Estudantes com Cadu e Lula pela Democracia,RN,Mossoró,,UERN,,https://www.instagram.com/p/DeP6DiFSpz-/,https://boralula.org/agenda/#/acao/1008053
+2026-10-13,17:30,19:30,caminhada,Caminhada unificada da juventude estudantil em Mossoró,RN,Mossoró,,Em frente à UFERSA,,https://www.instagram.com/p/DeZ2XQ7iYSn/,https://boralula.org/agenda/#/acao/1037874
+2026-10-13,10:00,12:00,outro,Pré-ato: produção de cartazes no IFRN Central,RN,Natal,,Rosquinhas do IFRN Central,,https://www.instagram.com/p/DeZ-dhqoVsx/,https://boralula.org/agenda/#/acao/1037819
 2026-10-13,16:00,18:00,ato,Ato Bolsonaro Nunca Mais em Natal,RN,Natal,,Midway,,https://www.instagram.com/p/DeZKPxlR4cJ/,https://boralula.org/agenda/#/acao/1036850
 2026-10-13,16:00,18:00,ato,Ato em frente ao Midway pela reeleição de Lula,RN,Natal,,Midway,,https://www.instagram.com/p/DeZm-wjsBSb/,https://boralula.org/agenda/#/acao/1037334
 2026-10-13,16:00,18:00,ato,"Povo na rua contra a extrema-direita e pelo futuro do Brasil (Lula presidente, Cadu governador)",RN,Natal,,Em frente ao Midway (Midway Mall),,https://www.instagram.com/uneoficial/p/DeP-0S4vSWx/,https://boralula.org/agenda/#/acao/381
+2026-10-13,16:00,18:00,ato,Povo na Rua pelo Futuro do Brasil em Natal,RN,Natal,,Calçada do Midway Mall,,https://www.instagram.com/p/DeZ-0oNAk1o/,https://boralula.org/agenda/#/acao/1037846
 2026-10-13,11:00,13:00,panfletagem,Vira Voto Rio Grande do Sul,RS,Porto Alegre,,Banca da Juventude - esquina da Borges com a Salgado,,https://www.instagram.com/p/DeYFIphtCDY/,https://boralula.org/agenda/#/acao/1027561
 2026-10-13,18:00,20:00,caminhada,Caminhada Bota Pra Virar,RS,Porto Alegre,,Esquina Democrática,,https://www.instagram.com/p/DeZyDPJCc1Y/,https://boralula.org/agenda/#/acao/1036885
 2026-10-13,18:00,20:00,caminhada,Caminhada da Virada,RS,Porto Alegre,,Esquina Democrática,,https://www.instagram.com/p/DeYMFxgtL5y/,https://boralula.org/agenda/#/acao/1027205
 2026-10-13,18:00,20:00,caminhada,Caminhada em Porto Alegre,RS,Porto Alegre,,Esquina Democrática,,https://www.instagram.com/p/DeYFIphtCDY/,https://boralula.org/agenda/#/acao/1027598
+2026-10-13,18:00,20:00,caminhada,Caminhada em Porto Alegre com concentração na Esquina Democrática,RS,Porto Alegre,,Esquina Democrática,,https://www.instagram.com/p/DeaXrOVEQ38/,https://boralula.org/agenda/#/acao/1042093
 2026-10-13,18:00,20:00,caminhada,Caminhada vira-voto em Porto Alegre,RS,Porto Alegre,Centro Histórico,Esquina Democrática,,https://www.instagram.com/p/DeXunDtsorL/,https://boralula.org/agenda/#/acao/1036886
 2026-10-13,17:30,19:30,ato,Ato unificado Lula Presidente 13,RS,Santa Maria,,Praça Saldanha Marinho,,https://www.instagram.com/p/DeVSF1NODKw/,https://boralula.org/agenda/#/acao/1000519
 2026-10-13,17:30,19:30,ato,Bota pra Virar,RS,Santa Maria,,Praça Saldanha Marinho,,https://www.instagram.com/p/DeZV-bSjZhg/,https://boralula.org/agenda/#/acao/1032180
@@ -266,6 +201,7 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-13,17:00,19:00,ato,Ato estudantil Santa Catarina com Lula na Catedral de Florianópolis,SC,Florianópolis,,Catedral Metropolitana de Florianópolis,,https://www.instagram.com/p/DeQBYljAdiA/,https://boralula.org/agenda/#/acao/1000516
 2026-10-13,17:00,19:00,ato,Ato Nacional Santa Catarina com Lula em Florianópolis,SC,Florianópolis,Centro,Catedral de Florianópolis,,https://www.instagram.com/p/DeQOQ8SJ9FA/,https://boralula.org/agenda/#/acao/788
 2026-10-13,17:00,19:00,ato,Ato no centro da cidade,SC,Florianópolis,,Catedral,,https://www.instagram.com/p/DeQQgyctSRN/,https://boralula.org/agenda/#/acao/1000517
+2026-10-13,17:00,19:00,ato,Ato pela juventude com Lula em Santa Catarina,SC,Florianópolis,,Catedral,,https://www.instagram.com/p/DeYAdYOtysz/,https://boralula.org/agenda/#/acao/1045922
 2026-10-13,17:00,19:00,ato,Grande ato com os estudantes,SC,Florianópolis,,Catedral,,https://www.instagram.com/p/DeZbRz2unYa/,https://boralula.org/agenda/#/acao/1036416
 2026-10-13,19:00,21:00,ato,Ato da juventude do PT em apoio ao Lula na Praça da Bailarina,SC,Joinville,,Praça da Bailarina,,https://www.instagram.com/p/DePWlbVxNHY/,https://boralula.org/agenda/#/acao/1002946
 2026-10-13,19:00,21:00,ato,Ato em Joinville saindo da Praça da Bailarina,SC,Joinville,,Praça da Bailarina,,https://www.instagram.com/p/DeZoL4llCbZ/,https://boralula.org/agenda/#/acao/1036463
@@ -329,12 +265,16 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-14,18:30,20:30,outro,Cozinhas Solidárias com Lula,,,,,sim,https://us06web.zoom.us/j/87144220828,https://boralula.org/agenda/#/acao/1000251
 2026-10-14,19:00,21:00,outro,Saúde da População Negra com Lula,,,,,sim,https://docs.google.com/forms/d/e/1FAIpQLSeDTQmnqPG_ndp5-xb7j0Ei0sl6St1xsHPPQ_EIqAmqMVsvag/viewform,https://boralula.org/agenda/#/acao/1000252
 2026-10-14,15:00,17:00,caminhada,Caminhada na Feira,,Santo Antônio do Leverger,,Av. Marechal Deodoro da Fonseca – Centro,,,https://boralula.org/agenda/#/acao/330
+2026-10-14,16:00,18:00,ato,Mobilização popular em apoio à candidatura de Lula em Mazagão,AP,Mazagão,,"Universidade Federal do Amapá (UNIFAP), Campus Mazagão",,https://www.instagram.com/p/DeamUchp6S2/,https://boralula.org/agenda/#/acao/1042696
 2026-10-14,09:00,11:00,ato,Arrastão das entidades sindicais do funcionalismo estatal,BA,Salvador,,CAB,,https://www.instagram.com/p/DeSMBYFCW--/,https://boralula.org/agenda/#/acao/1000223
 2026-10-14,09:00,11:00,ato,Chamado Geral do Povo de Santo na Pedra do Xangô,BA,Salvador,,Saída da Pronáica - Pedra de Xangô,,https://www.instagram.com/p/DeSMBYFCW--/,https://boralula.org/agenda/#/acao/1000224
+2026-10-14,14:00,16:00,encontro,O futuro da educação superior no Brasil,BA,Salvador,,Salão Nobre da Reitoria,,https://www.instagram.com/p/DePLZeuy17S/,https://boralula.org/agenda/#/acao/1041607
 2026-10-14,18:00,20:00,ato,Ato com Lula pela democracia e pela educação pública,BA,Salvador,Ondina,Praça das Artes,,https://www.instagram.com/p/DeQPFViSMhq/,https://boralula.org/agenda/#/acao/1000243
 2026-10-14,18:00,20:00,ato,Ato em defesa da democracia e da educação pública com o Coletivo IHAC,BA,Salvador,Ondina,Praça das Artes,,https://www.instagram.com/p/DeU6Q8pyVvH/,https://boralula.org/agenda/#/acao/1002327
 2026-10-14,19:00,21:00,encontro,Agenda de assembleias gerais da UNEB,BA,Teixeira de Freitas,,Campus X - Área de Convivência,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000254
 2026-10-14,18:00,20:00,outro,Porta a Porta,CE,Aracati,,Vila São Rafael,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000245
+2026-10-14,18:00,20:00,cultural,Quarta D'Yansã com atrações da Caravana Cultural no Beco do Tambor,CE,Fortaleza,Centro,Beco do Tambor,,https://www.instagram.com/p/DeRzvrDkdKF/,https://boralula.org/agenda/#/acao/1042154
+2026-10-14,18:00,20:00,cultural,Quarta D'Yansã: música e axé no Beco do Tambor,CE,Fortaleza,Centro,Beco do Tambor,,https://www.instagram.com/p/DeMy072RcXG/,https://boralula.org/agenda/#/acao/1042153
 2026-10-14,18:13,20:13,encontro,Plenária População LGBTI+ com Lula,CE,Fortaleza,,Sede do PT Ceará,,https://www.instagram.com/p/DeRy5rBxU9j/,https://boralula.org/agenda/#/acao/1000248
 2026-10-14,17:30,19:30,caminhada,Passeata UESI: caminhada pró-Lula em Tianguá,CE,Tianguá,,Praça do Jacques,,https://www.instagram.com/p/DeW86XVxpXk/,https://boralula.org/agenda/#/acao/1034815
 2026-10-14,08:30,10:30,encontro,Assembleia Geral do SINTFUB,DF,Brasília,,Praça Chico Mendes,,https://www.instagram.com/p/DeRQdgtlkgo/,https://boralula.org/agenda/#/acao/1037423
@@ -383,6 +323,7 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-14,17:30,19:30,ato,Manifestação unificada de estudantes e trabalhadores: vamos ocupar as ruas,RJ,Rio de Janeiro,,Igreja da Candelária,,https://www.instagram.com/p/DeK8kv-OCqV/,https://boralula.org/agenda/#/acao/184
 2026-10-14,17:30,19:30,ato,Manifestação unificada de estudantes e trabalhadores: vamos ocupar as ruas,RJ,Rio de Janeiro,,Igreja da Candelária,,https://www.instagram.com/p/DeK8kv-OCqV/,https://boralula.org/agenda/#/acao/297
 2026-10-14,18:00,20:00,encontro,Psol com Lula – Bora Virar!,RJ,Rio de Janeiro,,SINDPREV,,https://www.instagram.com/p/DeSri9fl49N/,https://boralula.org/agenda/#/acao/1000242
+2026-10-14,18:00,20:00,cultural,"Quarta D'Yansã: música, afoxé e DJ no Beco do Tambor",RJ,Rio de Janeiro,Centro,Beco do Tambor,,https://www.instagram.com/p/DeUOPJlRNZo/,https://boralula.org/agenda/#/acao/1042706
 2026-10-14,20:00,22:00,cultural,Forró Baião Carioca com DJ Aguiar e DJ Joy,RJ,Rio de Janeiro,Lapa,CCS Movimento (Centro de Cultura Social Movimento),,https://www.instagram.com/p/DeUSYaHAI19/,https://boralula.org/agenda/#/acao/1000541
 2026-10-14,18:00,20:00,encontro,Plenária aberta do PSOL RN para organizar o segundo turno,RN,Natal,Cidade Alta,Sede Marielle Franco,,https://www.instagram.com/p/DeRqnwYJ8kL/,https://boralula.org/agenda/#/acao/1000539
 2026-10-14,11:30,13:30,encontro,Plenária aberta: mobilização estudantil em defesa da democracia e da educação pública,SC,Florianópolis,Itacorubi,"Arena do CEART, UDESC Itacorubi",,https://www.instagram.com/p/DeXk5cDNwMs/,https://boralula.org/agenda/#/acao/1036930
@@ -403,15 +344,18 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-15,09:00,11:00,panfletagem,Panfletagem na Feirinha da UEFS,BA,Feira de Santana,,Feirinha da UEFS,,https://www.instagram.com/p/DeRXEc3Eemd/,https://boralula.org/agenda/#/acao/1000260
 2026-10-15,09:00,11:00,panfletagem,Panfletagem na Feirinha da UEFS,BA,Feira de Santana,,Feirinha da UEFS,,https://www.instagram.com/p/DeRXEc3Eemd/,https://boralula.org/agenda/#/acao/1000261
 2026-10-15,17:00,19:00,cultural,Leitura dramatizada de Concerto para Antares na X Festa Literária de Jequié,BA,Jequié,,Auditório da Câmara de Vereadores,,https://www.instagram.com/p/DeUU30QKqb1/,https://boralula.org/agenda/#/acao/1002964
+2026-10-15,14:00,16:00,encontro,Debate: O futuro da educação superior no Brasil,BA,Salvador,,Salão Nobre da Reitoria (Palácio da Reitoria da UFBA),,https://www.instagram.com/p/DeaWDqnSGGE/,https://boralula.org/agenda/#/acao/1042168
 2026-10-15,16:00,18:00,ato,Ato Unificado em defesa da Educação,BA,Salvador,,Reitoria da UFBA,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1035036
 2026-10-15,08:13,10:13,caminhada,Marcha da Educação,CE,Aracati,,Rua Coronel Alexandrino,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000255
 2026-10-15,18:13,20:13,outro,Porta a Porta,CE,Aracati,,Rua 2 de Novembro e Tabajara,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000271
+2026-10-15,18:30,20:30,encontro,"Plenária em defesa da educação na saúde, da ciência e do SUS",CE,Fortaleza,,Meridional Convention Center,,https://www.instagram.com/p/DeZ4nSdiyCb/,https://boralula.org/agenda/#/acao/1037980
 2026-10-15,09:00,11:00,encontro,Assembleia Unificada – Campus Darcy Ribeiro,DF,Brasília,,Teatro de Arena,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000259
 2026-10-15,17:00,19:00,caminhada,Caminhada pela Educação em Muriaé,MG,Muriaé,,Praça João Pinheiro,,https://www.instagram.com/p/DeZmkSQo5Mw/,https://boralula.org/agenda/#/acao/1036489
 2026-10-15,18:00,20:00,ato,Ato em defesa das universidades na UFU (João Naves),MG,Uberlândia,,UFU (João Naves),,https://www.instagram.com/p/DeO_ibTxo4w/,https://boralula.org/agenda/#/acao/1000547
 2026-10-15,16:00,18:00,panfletagem,Mulheres da Educação com Lula: panfletaço e bandeiraço pelo Dia das Professoras,MT,Cuiabá,,Avenida entre os bairros Jardim União e Florianópolis,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/331
 2026-10-15,17:00,19:00,ato,Bandeiraço – DAENT,PA,Belém,,Praça do Marex,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1029334
 2026-10-15,09:00,11:00,ato,ATO BORA VIRAR LULA,PA,Santa Maria do Pará,,Santa Maria do Pará,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000258
+2026-10-15,15:13,17:13,ato,Passeata pela democracia e educação em Patos,PB,Patos,,Praça do CEPA,,https://www.instagram.com/p/DeacBK0RFCc/,https://boralula.org/agenda/#/acao/1042721
 2026-10-15,07:13,09:13,panfletagem,Banquinha da UPE em frente ao HUOC,PE,Recife,Santo Amaro,Em frente ao HUOC (Hospital Universitário Oswaldo Cruz),,https://www.instagram.com/p/DeQGn-xBWF-/,https://boralula.org/agenda/#/acao/2471
 2026-10-15,16:13,18:13,panfletagem,Banquinha da UPE e ApD no Parque das Graças,PE,Recife,Graças,Parque das Graças,,https://www.instagram.com/p/DeQGn-xBWF-/,https://boralula.org/agenda/#/acao/2472
 2026-10-15,10:00,12:00,outro,Dia Nacional de Luta dos Trabalhadores da Educação – Aula Pública sobre CLT e Previdência,PR,Curitiba,,Praça Carlos Gomes - Centro,,https://www.instagram.com/p/DeM-uwUnNJ2/,https://boralula.org/agenda/#/acao/1000262
@@ -426,9 +370,11 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-15,14:00,16:00,caminhada,Caminhada da juventude da Baixada: concentração na Praça Rui Barbosa até o Calçadão,RJ,Nova Iguaçu,Centro,Praça Rui Barbosa,,https://www.instagram.com/p/DeMSFJcN15J/,https://boralula.org/agenda/#/acao/300
 2026-10-15,16:00,18:00,panfletagem,Militância com Lula,RJ,Paraty,,Esquina e frente à rodoviária,,https://www.instagram.com/p/DeSuyYOTf5z/,https://boralula.org/agenda/#/acao/1000267
 2026-10-15,10:00,12:00,caminhada,Ato Unificado da Educação em Madureira,RJ,Rio de Janeiro,,Concentração no Viaduto - Caminhada até o Parque Madureira,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1034626
+2026-10-15,15:00,17:00,ato,Ato estudantil pelo fim da escala 6x1 e contra a expansão da extrema-direita,RJ,Rio de Janeiro,Campo Grande,Praça Quixeramobim,,https://www.instagram.com/p/DeSA4yQx_d6/,https://boralula.org/agenda/#/acao/1042169
 2026-10-15,15:00,17:00,panfletagem,Juventude Carioca na Luta,RJ,Rio de Janeiro,,Campo Grande no Sarah,,https://www.instagram.com/p/DeSouxLOFkq/,https://boralula.org/agenda/#/acao/1000264
 2026-10-15,15:00,17:00,ato,Protesto Estudantil,RJ,Rio de Janeiro,,Colégio Sarah Kubitschek,,https://www.instagram.com/p/DeNwf7wDZps/,https://boralula.org/agenda/#/acao/301
 2026-10-15,16:00,18:00,ato,Agenda de Mobilização na Leopoldina,RJ,Rio de Janeiro,,Praça das Nações,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1018147
+2026-10-15,17:00,19:00,outro,"Pedalula Zona Leste: pedal a partir da Praça Cívica, em Natal",RN,Natal,,Praça Cívica,,https://www.instagram.com/p/DeaLrIapJrz/,https://boralula.org/agenda/#/acao/1037976
 2026-10-15,09:00,11:00,ato,Ato Professores e Estudantes com Lula,SP,Barueri,,Boulevard,,https://www.instagram.com/p/DeRqXpcRyyw/,https://boralula.org/agenda/#/acao/1000257
 2026-10-15,17:00,19:00,caminhada,Passeata Estudantes pela Democracia em Guarulhos,SP,Guarulhos,,E.E. Prof. Antônio Viana de Souza,,https://www.instagram.com/p/DeZqHNKxQnr/,https://boralula.org/agenda/#/acao/1037458
 2026-10-15,17:00,19:00,ato,ATO DA EDUCAÇÃO | Aula na Rua!,SP,Ribeirão Preto,,Esquina Democrática,,https://www.instagram.com/p/DeXIdMjSSg1/,https://boralula.org/agenda/#/acao/1032268
@@ -440,6 +386,7 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-15,18:00,20:00,ato,Manifestação dos Estudantes Antifacistas votam Lula! Bolsonaro Nuca Mais!,SP,São Paulo,,Largo da Batata,,https://www.instagram.com/p/DeSIhapJ3gb/,https://boralula.org/agenda/#/acao/1000270
 2026-10-15,18:30,20:30,ato,Virada na Metrópole,SP,São Paulo,,Galeria Metrópole,,https://www.instagram.com/p/DeUP-edjl6-/,https://boralula.org/agenda/#/acao/1000272
 2026-10-15,19:00,21:00,encontro,Plenária da Área Continental – Lula Presidente 13,SP,São Vicente,Parque das Bandeiras,Pastoral da Criança,,https://www.instagram.com/p/DeZIW9Qxs1o/,https://boralula.org/agenda/#/acao/1036492
+2026-10-16,15:00,17:00,encontro,Live COP31: a resposta dos povos indígenas à crise climática,,,,,sim,https://www.instagram.com/p/DeZQvg9xYT6/,https://boralula.org/agenda/#/acao/1037984
 2026-10-16,18:00,20:00,caminhada,Passeata no Dique do Tororó com concentração no monumento do Mestre Moa,BA,Salvador,,Monumento do Mestre Moa - Dique do Tororó,,https://www.instagram.com/p/DeRpEghxJC1/,https://boralula.org/agenda/#/acao/1000281
 2026-10-16,18:13,20:13,outro,Porta a Porta,CE,Aracati,,Bairro Aterro,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000283
 2026-10-16,18:30,20:30,panfletagem,Bandeiraço e Adesivaço – campanha Lula em Cascavel,CE,Cascavel,,Mestre Zé,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000285
@@ -466,6 +413,7 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-16,18:13,20:13,caminhada,Caminhada do Vira Voto com Lula Presidente em Nazaré da Mata,PE,Nazaré da Mata,,Dom Ricardo Vilela,,https://www.instagram.com/p/DeSj3f9yUvK/,https://boralula.org/agenda/#/acao/1000550
 2026-10-16,09:13,11:13,panfletagem,Banquinha da UPE no Mercado de São José,PE,Recife,São José,Mercado de São José,,https://www.instagram.com/p/DeQGn-xBWF-/,https://boralula.org/agenda/#/acao/2473
 2026-10-16,16:13,18:13,panfletagem,Panfletagem da UPE no Derby,PE,Recife,Derby,Derby,,https://www.instagram.com/p/DeQGn-xBWF-/,https://boralula.org/agenda/#/acao/2474
+2026-10-16,17:00,23:00,cultural,"Blend BBQ Festival com churrasco, shows de rock e tributos no Caminho Niemeyer",RJ,Niterói,,Caminho Niemeyer,,https://www.instagram.com/p/DeSbjmlgFXG/,https://boralula.org/agenda/#/acao/1041646
 2026-10-16,16:00,18:00,panfletagem,Militância com Lula,RJ,Paraty,,Esquina em frente à rodoviária,,https://www.instagram.com/p/DeSuyYOTf5z/,https://boralula.org/agenda/#/acao/1000277
 2026-10-16,17:00,19:00,panfletagem,Banqunha e Panfletagem – F. Soares,RJ,Porto Real,,Av. B. Quadra do Freitas Soares,,https://www.instagram.com/p/DeSRBQcGYJY/,https://boralula.org/agenda/#/acao/1000279
 2026-10-16,10:00,12:00,ato,Bangu contra Bolsonaro,RJ,Rio de Janeiro,,Largo de Bangu - Zona Oeste,,https://www.instagram.com/p/DeSouxLOFkq/,https://boralula.org/agenda/#/acao/1000275
@@ -476,6 +424,7 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-16,09:00,13:00,outro,"Saldão APAM: peças por R$ 5,00 na Barra Funda",SP,São Paulo,,"Rua Dona Elisa, 133",,https://www.instagram.com/p/DeQApw3iVvG/,https://boralula.org/agenda/#/acao/1000548
 2026-10-16,11:30,13:30,encontro,Encontro de Médicas e Médicos com Alckimin pela democracia e pelo SUS,SP,São Paulo,,Casa de Portugal,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000276
 2026-10-16,18:30,20:30,ato,"Ato O Brasil é do povo brasileiro, em defesa da democracia",SP,São Sebastião,,Praça da Matriz,,https://www.instagram.com/p/DeRyFEBxG0L/,https://boralula.org/agenda/#/acao/1000287
+2026-10-17,09:00,12:00,encontro,III Encontro Faraimará: Soberania e Segurança Alimentar para povos de terreiro,,,,,sim,https://www.instagram.com/p/DeKM1QFOcM_/,https://boralula.org/agenda/#/acao/1041659
 2026-10-17,18:00,20:00,caminhada,Grande caminhada em apoio ao Presidente Lula!,AL,Piaçabuçu,,Entrada do bairro Paciência,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000312
 2026-10-17,16:00,18:00,ato,Ato do Povo para o Povo,AP,Macapá,,Praça da Bandeira,,https://www.instagram.com/p/DeMttreBKPk/,https://boralula.org/agenda/#/acao/141
 2026-10-17,18:13,20:13,caminhada,Carreata do Lula,CE,Aracati,,Concentração na Av. Coronel Pompeu (em frente à Rodoviária),,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000314
@@ -483,10 +432,15 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-17,17:30,19:30,caminhada,"COM LULA, SEGUIMOS EM FRENTE!",CE,Campos Sales,,Enfrente a AABB de Campos a Sales,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/131
 2026-10-17,09:00,11:00,panfletagem,Panfletagem – Campanha Lula em Cascavel,CE,Cascavel,,Feira de Cascavel,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000292
 2026-10-17,09:00,11:00,panfletagem,Panfletagem na Feira de Cascavel,CE,Cascavel,,Feira de Cascavel,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000289
+2026-10-17,09:13,11:13,ato,"Ato Brasil soberano, democrático e antirracista - Lula Presidente",CE,Fortaleza,,Passeio Público,,https://www.instagram.com/p/DeM4V-7G9oA/,https://boralula.org/agenda/#/acao/1041662
+2026-10-17,09:13,11:13,ato,Grande Ocupação Cultural de Negros e Negras com Lula,CE,Fortaleza,,Passeio Público,,https://www.instagram.com/p/DeRzTCFkcGV/,https://boralula.org/agenda/#/acao/1042206
 2026-10-17,09:13,11:13,ato,Ocupação Cultural de negras e negros e povos e comunidades tradicionais com Lula 13,CE,Fortaleza,Centro,Passeio Público (concentração; cortejo até a Praça dos Leões),,https://www.instagram.com/p/DeP9Cm-SNnb/,https://boralula.org/agenda/#/acao/1198
+2026-10-17,09:13,11:13,ato,"Ocupação cultural de negras e negros, povos e comunidades tradicionais",CE,Fortaleza,Centro,Passeio Público,,https://www.instagram.com/p/DeRiimjBKQk/,https://boralula.org/agenda/#/acao/1042205
+2026-10-17,09:13,11:13,ato,"Ocupação Cultural de Negras e Negros, Povos e Comunidades Tradicionais com Lula",CE,Fortaleza,Centro,Passeio Público,,https://www.instagram.com/p/DeP9Cm-SNnb/,https://boralula.org/agenda/#/acao/1041663
 2026-10-17,09:13,11:13,ato,"Ocupação Cultural – Negras e Negros, Povos e Comunidades Tradicionais com Lula",CE,Fortaleza,,Passeio Público,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000293
 2026-10-17,18:13,20:13,ato,Ato Inter-religioso de Fortaleza,CE,Fortaleza,,Pracinha Gentilândia,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000315
 2026-10-17,18:13,20:13,ato,Ato Inter-Religioso de Fortaleza,CE,Fortaleza,,Pracinha da Gentilândia,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000316
+2026-10-17,08:00,10:00,caminhada,Caminhada da Cultura Cariri,CE,Juazeiro do Norte,João Cabral,Praça do CC,,https://www.instagram.com/p/DeZvUfXEQar/,https://boralula.org/agenda/#/acao/1037996
 2026-10-17,08:00,10:00,caminhada,Caminhada pela democracia em Juazeiro do Norte,CE,Juazeiro do Norte,,Praça do CC,,https://www.instagram.com/p/DeVBOK9IvsK/,https://boralula.org/agenda/#/acao/1000552
 2026-10-17,09:00,11:00,ato,Ato De Mulher para Mulher: vivas e livres na Praça Cívica,GO,Goiânia,,Praça Cívica,,https://www.instagram.com/p/DeUn8J0h6ff/,https://boralula.org/agenda/#/acao/1036975
 2026-10-17,09:00,11:00,ato,Ato Mulheres Vivas e Livres em Goiânia,GO,Goiânia,,Praça Cívica,,https://www.instagram.com/p/DeUc3eARH8d/,https://boralula.org/agenda/#/acao/1000554
@@ -494,6 +448,8 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-17,16:30,18:30,encontro,Samba do Caim com Lula,MA,São Luís,Centro,Praça João Lisboa,,https://www.instagram.com/p/DeM_IPOxU1t/,https://boralula.org/agenda/#/acao/2436
 2026-10-17,16:00,18:00,ato,"Ato das mulheres por Lula presidente na praça Raul Soares, em BH",MG,Belo Horizonte,,Praça Raul Soares,,https://www.instagram.com/p/DeZc2JIJWY2/,https://boralula.org/agenda/#/acao/1037488
 2026-10-17,16:00,18:00,ato,Ato de mulheres com Lula pelo fim da escala 6x1,MG,Belo Horizonte,,Praça Raul Soares,,https://www.instagram.com/p/DeW_fokuzb8/,https://boralula.org/agenda/#/acao/1036987
+2026-10-17,09:00,11:00,ato,Ato unificado Estudantes com Lula em Betim,MG,Betim,,Praça Tiradentes,,https://www.instagram.com/p/DeaR68Bxtuv/,https://boralula.org/agenda/#/acao/1042198
+2026-10-17,09:30,11:30,ato,Ato da Virada Pró-Lula em Congonhas,MG,Congonhas,,Praça JK / Quarteirão,,https://www.instagram.com/p/DeaH6WcJOEr/,https://boralula.org/agenda/#/acao/1038003
 2026-10-17,09:00,18:00,panfletagem,Mulheres Indígenas com Lula – Mulheres Indígenas no Centro da História – Boe Bororo,MT,Rondonópolis,,Aldeia Tadarimana,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/333
 2026-10-17,07:00,09:00,caminhada,Caminhada,PA,Abaetetuba,,Praça das Bandeiras,,https://www.instagram.com/p/DeZkeKGjmHQ/,https://boralula.org/agenda/#/acao/1030220
 2026-10-17,17:00,21:00,cultural,"Movimento Cultural de Apoio ao Lula – Carimbó, capoeira, sarau poético, bate-papo e microfone aberto",PA,Ananindeua,,Centro Cultural Gingado Amazônico,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000308
@@ -521,6 +477,7 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-17,09:00,13:00,caminhada,Caminhada Cada Voto Importa a partir da Central do Brasil,RJ,Rio de Janeiro,,Central do Brasil (Portão C),,https://www.instagram.com/p/DePDdhvONy1/,https://boralula.org/agenda/#/acao/1000555
 2026-10-17,10:00,12:00,ato,Agenda de Mobilização da Leopoldina,RJ,Rio de Janeiro,,Feira da Nova Holanda,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1018178
 2026-10-17,11:00,13:00,cultural,Cortejo e ensaio aberto na Serrinha com roda de jongo e feijoada,RJ,Rio de Janeiro,Madureira,Casa do Jongo da Serrinha,,https://www.instagram.com/p/DeRpeiZRjQp/,https://boralula.org/agenda/#/acao/1005425
+2026-10-17,09:00,11:00,ato,"Ato na Praça Punta del Este, em Novo Hamburgo",RS,Novo Hamburgo,,Praça Punta del Este,,https://www.instagram.com/p/DeUf8luxpht/,https://boralula.org/agenda/#/acao/1042752
 2026-10-17,09:30,11:30,ato,Ato Mulheres com Lula nas ruas de Florianópolis,SC,Florianópolis,,Esquina Feminista / Largo da Alfândega,,https://www.instagram.com/p/DeUq0ejBcLn/,https://boralula.org/agenda/#/acao/1004832
 2026-10-17,09:30,11:30,panfletagem,MULHERES COM LULA NAS RUAS E NAS REDES,SC,Florianópolis,,Esquina Feminista/Largo da Alfândega,,https://www.instagram.com/p/DeUHdL4i-f2/,https://boralula.org/agenda/#/acao/1000294
 2026-10-17,17:00,19:00,caminhada,Caminhada Bora Lula,SE,Estância,,Praça Pedro Barreto,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1000307
@@ -531,6 +488,7 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-17,15:00,17:00,ato,Torcidas Unidas pela Democracia e por Lula - Grande Ato,SP,São Bernardo do Campo,,Igreja Matriz (Praça da Matriz),,https://www.instagram.com/p/DeZweR2Ob2B/,https://boralula.org/agenda/#/acao/1036984
 2026-10-17,11:00,13:00,ato,Ato antifascista em São João da Boa Vista,SP,São João da Boa Vista,,Praça Coronel Joaquim José,,https://www.instagram.com/p/DeMuaKGRB9k/,https://boralula.org/agenda/#/acao/1000557
 2026-10-17,09:00,11:00,ato,Vale do Paraíba pela Democracia,SP,São José dos Campos,,"Rua Padre Wilson Cunha, nº 197, Campo dos Alemães",,https://www.instagram.com/p/DeK4bX1TcK_/,https://boralula.org/agenda/#/acao/94
+2026-10-17,09:00,13:00,encontro,"2º Módulo do curso Cozinhas Brasileiras: Cozinhar o Brasil, da Fome à Mesa",SP,São Paulo,,Escola Nacional Paulo Freire,,https://www.instagram.com/p/DeZ0Y7ZzNVM/,https://boralula.org/agenda/#/acao/1037997
 2026-10-17,10:00,12:00,encontro,Rolê dos Livros na Livraria Expressão Popular,SP,São Paulo,,Livraria Expressão Popular,,https://www.instagram.com/p/DeRdbxuHFhu/,https://boralula.org/agenda/#/acao/1000556
 2026-10-17,13:00,15:00,caminhada,Marcha Estudantil em Sorocaba,SP,Sorocaba,,Concentração na Praça Frei Baraúna às 13h; marcha às 15h até a Pista de Caminhada do Campolim,,https://www.instagram.com/p/DeMZuhzRaTs/,https://boralula.org/agenda/#/acao/388
 2026-10-17,13:00,15:00,caminhada,Marcha estudantil em Sorocaba em defesa da participação política e do voto,SP,Sorocaba,,Praça Frei Baraúna,,https://www.instagram.com/p/DeMZuhzRaTs/,https://boralula.org/agenda/#/acao/1000558
@@ -543,8 +501,12 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-18,11:00,13:00,ato,Convoque Minas Gerais,MG,Belo Horizonte,,Praça da Estação,,https://comitepopular.org.br/agenda/,https://boralula.org/agenda/#/acao/1032341
 2026-10-18,16:00,18:00,ato,Vamos às Ruas,MG,Juiz de Fora,,Parque Halfeld,,https://www.instagram.com/p/DeKHpetx6OP/,https://boralula.org/agenda/#/acao/90
 2026-10-18,15:00,17:00,ato,Ato Político em Beja,PA,Abaetetuba,,Praça de São Miguel,,https://www.instagram.com/p/DeZkeKGjmHQ/,https://boralula.org/agenda/#/acao/1030269
+2026-10-18,16:13,18:13,caminhada,Grande Passeata da Virada,PB,Patos,,Colégio Ágape (antigo Gente Inocente),,https://www.instagram.com/p/DeaIv3VpFKI/,https://boralula.org/agenda/#/acao/1041690
 2026-10-18,17:13,19:13,caminhada,Carreata da região em Santo André,PB,Santo André,,Campo da Malhada Vermelha,,https://www.instagram.com/p/DeSgMnfpEYj/,https://boralula.org/agenda/#/acao/1000567
 2026-10-18,16:00,18:00,ato,Ato dos Artistas em Caruaru,PE,Caruaru,,Rua João Condé - Centro,,https://www.instagram.com/p/DeQUno4jhpv/,https://boralula.org/agenda/#/acao/1000329
+2026-10-18,14:00,16:00,caminhada,Caminhada da juventude com Lula em Olinda,PE,Olinda,Carmo,Sede do PT Olinda,,https://www.instagram.com/p/DeVG2CHmmN0/,https://boralula.org/agenda/#/acao/1042785
+2026-10-18,14:13,16:13,cultural,Bloco da Vitória: desfile de carnaval em Olinda,PE,Olinda,,Praça do Carmo,,https://www.instagram.com/p/DeNmIwGpbMC/,https://boralula.org/agenda/#/acao/1042232
+2026-10-18,14:00,16:00,caminhada,"Caminhada no Parque 13 de Maio, Recife",PE,Recife,Recife,Parque 13 de Maio,,https://www.instagram.com/p/DeWxUP0O28s/,https://boralula.org/agenda/#/acao/1041688
 2026-10-18,13:00,15:00,panfletagem,Ato Lula Presidente,PR,Curitiba,,Praça da Mulher Nua,,https://www.instagram.com/p/DeM-uwUnNJ2/,https://boralula.org/agenda/#/acao/1000327
 2026-10-18,16:00,18:00,panfletagem,Militância com Lula,RJ,Paraty,,Esquina em frente à rodoviária,,https://www.instagram.com/p/DeSuyYOTf5z/,https://boralula.org/agenda/#/acao/1000331
 2026-10-18,09:00,11:00,panfletagem,Panfletagem – Centro,RJ,Porto Real,,Mercado Lulinha,,https://www.instagram.com/p/DeSRBQcGYJY/,https://boralula.org/agenda/#/acao/1000320
@@ -619,7 +581,9 @@ data,hora_inicio,hora_fim,tipo,titulo,uf,municipio,bairro,local,online,fonte_url
 2026-10-24,09:00,11:00,caminhada,Carreata de apoio a Lula em São João da Boa Vista,SP,São João da Boa Vista,,Avenida Profª Isette Correa Fontão (UNESP),,https://www.instagram.com/p/DeZZkJABsDn/,https://boralula.org/agenda/#/acao/1036528
 2026-10-24,09:00,11:00,caminhada,Moto-carreata da vitória do Lula em São João da Boa Vista,SP,São João da Boa Vista,,Região da UNESP,,https://www.instagram.com/p/DePU0pLRquI/,https://boralula.org/agenda/#/acao/1000356
 2026-10-28,07:30,17:00,encontro,Comemoração e debate: Dia da Servidora e do Servidor Público,GO,Goiânia,,Crystal Plaza Hotel,,https://www.instagram.com/p/DeHO1IsRUl4/,https://boralula.org/agenda/#/acao/1037521
+2026-10-30,14:00,17:30,outro,JURA 2026 – Grupos de Trabalho (Jornada Universitária em Defesa da Reforma Agrária Popular),RR,Boa Vista,,UFRR e UERR,,https://www.instagram.com/p/DeS4p-rlucY/,https://boralula.org/agenda/#/acao/1042252
 2026-10-31,14:00,16:00,encontro,Plenária do Fórum Estadual da Frente Nacional de Mulheres no Hip-Hop RJ,RJ,Rio de Janeiro,Madureira,Casa Rua,,https://www.instagram.com/p/DeJxTP6kRn_/,https://boralula.org/agenda/#/acao/1000576
+2026-11-07,10:00,13:00,encontro,ImaginAcción Climática: Encuentro Global de Niñez Indígena y Afro,,,,,sim,https://www.instagram.com/p/DeHdD33IOOP/,https://boralula.org/agenda/#/acao/1041709
 2026-11-07,18:00,20:00,encontro,Encontro com o autor Tiago Feijó no Clube de Leitura Experiência Literária,SP,Santos,,Restaurante Anzol,,https://www.instagram.com/p/DeO1ysNN5aQ/,https://boralula.org/agenda/#/acao/1007100
 2026-11-11,08:00,10:00,encontro,1º Colóquio Metropolitano para uma Educação Antirracista,PA,Belém,Batista Campos,Auditório do Sintepp,,https://www.instagram.com/p/DeMWGr5Fpqf/,https://boralula.org/agenda/#/acao/1037524
 2026-11-13,18:00,20:00,ato,Ato em defesa da reeleição de Lula no Largo da Batata,SP,São Paulo,,Largo da Batata,,https://www.instagram.com/p/DeYFJoyxjjH/,https://boralula.org/agenda/#/acao/1037017
