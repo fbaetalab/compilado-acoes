@@ -18,6 +18,8 @@ PAGINA = "https://boralula.org/agenda/#/acao/{}"
 SAIDA = RAIZ / "ja-mapeadas" / "acoes.csv"
 COLUNAS = ["data", "hora_inicio", "hora_fim", "tipo", "titulo", "uf", "municipio", "bairro", "local",
            "online", "fonte_url", "link"]
+# Planilha lê como fórmula a célula que começa com =, +, - ou @ (e tab ou CR antes deles); aspas de CSV não impedem
+INICIO_DE_FORMULA = ("=", "+", "-", "@", "\t", "\r")
 
 
 def baixar() -> dict:
@@ -65,6 +67,31 @@ def linhas(publico: dict, municipios: dict) -> list[dict]:
     return saida
 
 
+def para_planilha(valor):
+    """O texto que uma planilha leria como fórmula ganha um apóstrofo na frente e fica texto.
+
+    Todas as colunas deste CSV são texto (data e hora vêm como "2026-10-18" e "09:00", nunca como número), então a
+    regra vale para qualquer texto, inclusive "-2" num título. Valor que já é número (int ou float) passa como está:
+    número negativo de verdade não vira texto. Só o CSV passa por aqui; o JSON guarda o texto como veio.
+    """
+    if isinstance(valor, str) and valor.startswith(INICIO_DE_FORMULA):
+        return "'" + valor
+    return valor
+
+
+def gravar_csv(resultado: list[dict], caminho):
+    with open(caminho, "w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=COLUNAS, lineterminator="\n")
+        w.writeheader()
+        w.writerows({k: para_planilha(v) for k, v in l.items()} for l in resultado)
+
+
+def gravar_json(resultado: list[dict], caminho):
+    # A mesma lista em JSON, para quem compara no próprio coletor ("online" vira true/false, como no envio)
+    em_json = [{**l, "online": l["online"] == "sim"} for l in resultado]
+    caminho.write_text(json.dumps(em_json, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
+
+
 def main() -> int:
     publico = baixar()
     resultado = linhas(publico, carregar_municipios())
@@ -72,14 +99,8 @@ def main() -> int:
         print("A lista pública veio sem nenhuma ação futura; ja-mapeadas/acoes.csv ficou como estava.")
         return 1
     SAIDA.parent.mkdir(exist_ok=True)
-    with open(SAIDA, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=COLUNAS, lineterminator="\n")
-        w.writeheader()
-        w.writerows(resultado)
-    # A mesma lista em JSON, para quem compara no próprio coletor ("online" vira true/false, como no envio)
-    em_json = [{**l, "online": l["online"] == "sim"} for l in resultado]
-    SAIDA.with_suffix(".json").write_text(json.dumps(em_json, ensure_ascii=False, indent=1) + "\n",
-                                          encoding="utf-8", newline="\n")
+    gravar_csv(resultado, SAIDA)
+    gravar_json(resultado, SAIDA.with_suffix(".json"))
     print(f"{len(resultado)} ações de hoje em diante em ja-mapeadas/acoes.csv e ja-mapeadas/acoes.json.")
     return 0
 

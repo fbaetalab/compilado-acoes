@@ -20,7 +20,8 @@ Não entram reuniões fechadas nem compromissos internos.
 
 1. **Confira o mapeamento inicial** em [`ja-mapeadas/`](ja-mapeadas/): as ações já compiladas, de hoje em diante,
    em [CSV](ja-mapeadas/acoes.csv) e em [JSON](ja-mapeadas/acoes.json). A lista é atualizada a cada hora, e o
-   validador compara o seu arquivo com ela.
+   validador compara o seu arquivo com ela. No CSV, o texto que começa com `=`, `+`, `-` ou `@` vem com um
+   apóstrofo na frente (`'=1+1`), para a planilha não ler como fórmula; o JSON traz o texto como veio.
 2. **Monte o arquivo** no formato que for mais fácil para você:
    - **CSV**, para quem trabalha em planilha: copie [`modelo/acoes.csv`](modelo/acoes.csv) e preencha **uma linha por
      ação**. No Google Sheets: Arquivo → Fazer download → CSV. No Excel: Salvar como → **CSV UTF-8**.
@@ -147,7 +148,7 @@ confere e envia.
 | `exemplos/` | o mesmo exemplo em CSV e em JSON (ações fictícias) |
 | `ferramentas/` | o validador e a atualização do mapeamento inicial |
 | `dados/` | os municípios do IBGE, que o validador usa |
-| `testes/` | testes do validador: `python -m unittest discover testes` |
+| `testes/` | testes do validador e da atualização do mapeamento: `python -m unittest discover testes` |
 
 ---
 
